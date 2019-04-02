@@ -1,0 +1,21 @@
+.products {
+    width: 80%;
+    height: auto;
+    display: flex;
+}
+
+span {
+    display: inline-block;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
+
+ul {
+    border: 1px solid red;
+    list-style-type: none;
+    display: inline-block;
+    flex: 2;
+    justify-content: center;
+    align-items: center;
+}
