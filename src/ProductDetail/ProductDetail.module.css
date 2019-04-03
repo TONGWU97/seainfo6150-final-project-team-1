@@ -1,0 +1,22 @@
+.productDetail img {
+    width: 70%;
+    margin: 0 auto;
+}
+
+.productDetail table {
+    border-top: 1px solid gray;
+    width: 60%;
+    text-align: center;
+}
+
+.productDetail table caption {
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+button {
+    width: 8em;
+    height: 4em;
+    background: lightcoral;
+    font-size: 0.8em;
+}
