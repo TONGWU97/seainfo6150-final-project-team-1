@@ -8,20 +8,21 @@ const Products = ({ categories, products }) => {
     const category = categories[product.categoryId];
     return (
       <div className={styles.products} key={product.id}>
-          <span>
-            <Link to={`/products/${product.categoryId}/${product.id}`}>
+        <span>
+          <Link to={`/products/${product.categoryId}/${product.id}`}>
             <img src={category.img.sm} />
-            </Link>
-          </span>
-          
-          <ul>
+          </Link>
+        </span>
+        <ul>
+        <Link to={`/products/${product.categoryId}/${product.id}`}>
             <li>category: {product.categoryId}</li>
             <li>year: {product.year}</li>
             <li>price: {product.price}</li>
             <li>sale: {product.sale}</li>
             <li>title: {product.title}</li>
             <li>description: {product.description}</li>
-          </ul>
+        </Link>
+        </ul>
       </div>
     );
   })
