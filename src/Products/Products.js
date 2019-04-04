@@ -24,6 +24,7 @@ const Products = ({ categories, products }) => {
         </Link>
         </ul>
       </div>
+      
     );
   })
 };
