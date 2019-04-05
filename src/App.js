@@ -20,33 +20,23 @@ import Categories from './Categories/Categories';
 import CategoryProducts from './CategoryProducts/CategoryProducts';
 import Error from './Error/Error';
 import ProductDetail from './ProductDetail/ProductDetail';
-import ViewedProducts from './ViewedProducts/ViewedProducts';
 import OrderStep1 from './Order/OrderStep1';
 import OrderStep2 from './Order/OrderStep2';
 import Summary from './Order/Summary';
 import ThankYou from './Order/ThankYou';
 import NotFound from './NotFound/NotFound';
 
+import Header from './Header';
+import Footer from './Footer';
 let App = (props) => (
   <Router>
     <div className={styles.container}>
-      {/* start example of link to route */}
-      <Link to='/'>Home</Link>
-      {/* end example of link to route */}
+
+      <Header/>
 
       {/* start list of product category links */}
       <Categories categories={Object.values(props.categories)} />
       {/* end list of product category links */}
-
-
-      {/* start 5 most recently viewed products */}
-      <ViewedProducts
-        categories={props.categories}
-        products={
-          props.viewedProducts.map(productId => props.products[productId])
-        }
-      />
-      {/* end 5 most recently viewed products */}
 
       <main>
         {/* start error display -- I suggest you leave this here */}
@@ -133,6 +123,7 @@ let App = (props) => (
           />
         </Switch>
       </main>
+      <Footer/>
     </div>
   </Router>
 );

@@ -1,0 +1,29 @@
+.products {
+    width: 80%;
+    height: auto;
+    display: flex;
+    margin: 0 auto;
+    border-bottom: 1px solid gray;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+.products span {
+    display: inline-block;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+}
+
+.products ul {
+    list-style-type: none;
+    display: inline-block;
+    flex: 2;
+    line-height: 2em;
+    justify-content: center;
+    align-items: center;
+}
+.products ul li {
+    text-decoration: none;
+    color: black;
+}

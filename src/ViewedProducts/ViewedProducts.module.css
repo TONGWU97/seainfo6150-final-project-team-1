@@ -1,0 +1,5 @@
+.ViewedProducts {
+    display: inline;
+    flex-direction: row;
+    left: 20px;
+}

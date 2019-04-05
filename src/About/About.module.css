@@ -1,0 +1,29 @@
+.about{
+    background-image: url('/assets/img/about/background.jpeg');
+    background-size: 100%;
+    height: 600px;
+    width: 1000px;
+    display: flex;
+    align-items: flex-end;
+    filter:blur(3px);
+}
+
+.about_text{
+     width: 80%;
+     height: 60%;
+     margin: 1em;
+     background: hsla(0, 5%, 10%, .9);
+     color: white;
+     text-align: left;
+     overflow: hidden;
+     position: relative;
+     padding-left: 5%;
+     padding-right: 5%;
+     padding-top: 1%;
+     padding-bottom: 1%;
+     z-index: 1;
+     display: block;
+		 top: 10%;
+		 font-size:20px;
+		 -webkit-transform:translateY(-150%);
+}
