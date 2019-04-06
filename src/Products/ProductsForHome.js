@@ -1,19 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import styles from './Products.module.css';
+import styles from './ProductsForHome.module.css';
 
-
-const Products = ({ categories, products }) => {
+const ProductsForHome = ({ categories, products }) => {
   return products.map(product => {
     const category = categories[product.categoryId];
     return (
       <div className={styles.products} key={product.id}>
+      <div>
         <span>
           <Link to={`/products/${product.categoryId}/${product.id}`}>
             <img className={styles.productsImage} src={category.img.sm} />
           </Link>
         </span>
+        <div>
         <ul>
           <Link className={styles.list} to={`/products/${product.categoryId}/${product.id}`}>
             <li className={styles.title}>title: {product.title}</li>
@@ -24,13 +25,15 @@ const Products = ({ categories, products }) => {
             <li className={styles.description}>description: {product.description}</li>
           </Link>
         </ul>
+        </div>
+        </div>
       </div>
     );
   })
 };
 
-Products.propTypes = {
+ProductsForHome.propTypes = {
   products: PropTypes.array.isRequired
 };
 
-export default Products;
+export default ProductsForHome;

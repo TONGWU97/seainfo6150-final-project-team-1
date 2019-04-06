@@ -23,7 +23,21 @@
     justify-content: center;
     align-items: center;
 }
-.products ul li {
+
+.list {
     text-decoration: none;
     color: black;
+}
+
+.priceBefore {
+    text-decoration: line-through;
+}
+
+.sale {
+    color: red;
+    font-size: 3rem;
+}
+
+.productsImage:hover {
+    opacity: 0.6;
 }
