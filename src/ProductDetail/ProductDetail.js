@@ -31,7 +31,7 @@ class ProductDetail extends PureComponent {
           <div className={styles.detailImage}><img src={category.img.lg} /></div>
         </div>
           {/* start order button */}
-          <Link className={styles.button} to="/order/1" onClick={selectProductId.bind(null, product.id)}><button>Add to Cart ▶</button></Link>
+          <Link className={styles.button} to="/order/1" onClick={selectProductId.bind(null, product.id)}><button><img src="https://img.icons8.com/windows/32/000000/shop.png"/><div>Add to Cart ▶</div></button></Link>
           {/* end order button */}
       </div>
     );
