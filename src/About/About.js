@@ -2,9 +2,7 @@ import React from 'react';
 import style from './About.module.css';
 
 const About = () => (
-<div>
-
-  <div className = {style.about}></div>
+<div className={style.aboutpage}>
 
   <div className = {style.about_text}>
     <h1>About us</h1>
