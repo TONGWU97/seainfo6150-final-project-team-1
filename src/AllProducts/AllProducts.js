@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
-import Products from '../Products/Products';
+import ProductsForHome from '../Products/ProductsForHome';
+import styles from './AllProducts.module.css';
 
 const AllProducts = ({ categories, products }) => (
-  <Products categories={categories} products={products} />
+  <div className={styles.grid_style}>
+  <ProductsForHome categories={categories} products={products} />
+  </div>
 );
 
 AllProducts.propTypes = {
