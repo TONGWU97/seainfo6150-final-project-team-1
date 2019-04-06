@@ -1,12 +1,23 @@
-.about{
+.aboutpage:before {
+    height: 80rem;
+    width: 100%;
     background-image: url('/assets/img/about/background.jpeg');
-    background-size: 100%;
-    font-size: 30px;
-    height: 50rem;
-    width: 120rem;
+    background-size: cover;
+    /* overflow: hidden; */
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+}
+
+.aboutpage {
+    height: 80rem;
+    width: 100%;
     display: flex;
-    align-items: flex-end;
-    filter:blur(3px);
+    align-items: center;
+    justify-content: center;
 }
 
 .about_text{
@@ -16,15 +27,12 @@
      background: hsla(0, 5%, 10%, .9);
      color: white;
      text-align: left;
-     overflow: hidden;
-     position: relative;
+     position: absolute;
      padding-left: 5%;
      padding-right: 5%;
      padding-top: 2%;
      padding-bottom: 2%;
      z-index: 1;
-     display: block;
-		 top: 10%;
      font-size: 20px;
-		 -webkit-transform:translateY(-140%);
+     display: block;
 }
