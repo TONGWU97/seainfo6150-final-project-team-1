@@ -1,0 +1,10 @@
+.notfound_text{
+  padding: 10%;
+  position: relative;
+}
+
+.notfound_img{
+  padding-left: 45%;
+  padding-top: 10%;
+  position: absolute;
+}
