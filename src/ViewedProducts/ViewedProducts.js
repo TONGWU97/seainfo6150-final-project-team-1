@@ -11,8 +11,14 @@ const ViewedProducts = ({ categories, products }) => {
     const category = categories[product.categoryId];
     return (
       <div className={styles.ViewedProducts} key={`${product.id}-${index}`}>
-        <Link to={`/products/${category.id}/${product.id}`}>
+        <Link className={styles.ViewedImage} to={`/products/${category.id}/${product.id}`}>
           <img src={category.img.sm} />
+          <div className={styles.HiddenText}> 
+            <ul>
+            <li>price:{product.price} </li>
+            <li>{product.description} </li>
+            </ul>
+          </div>
         </Link>
       </div>
     );

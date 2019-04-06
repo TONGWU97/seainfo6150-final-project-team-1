@@ -1,6 +1,7 @@
 import styles from'./Home.module.css';
 import ViewedProducts from '../ViewedProducts/ViewedProducts';
 import React, {Component} from 'react';
+import ProductDetail from '../ProductDetail/ProductDetail';
 
 class Home extends Component {
   render() {
@@ -8,7 +9,6 @@ class Home extends Component {
       categories,
       products,
       viewedProducts,
-
     } = this.props;
     return (
       <div>
@@ -26,9 +26,8 @@ class Home extends Component {
           products={
             viewedProducts.map(productId => products[productId])
           }
-        />      
-
-    </div>
+        /> 
+        </div>
       )
   }
 }
