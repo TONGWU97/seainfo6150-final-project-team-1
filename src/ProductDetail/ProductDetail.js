@@ -17,7 +17,7 @@ class ProductDetail extends PureComponent {
     const category = categories[product.categoryId];
     return (
       <div className={styles.ProductDetail}>
-        <h1>>> {product.title}</h1>
+        {/* <h1>>> {product.title}</h1> */}
         <div className={styles.detailbox}>
           <div className={styles.detailList}>
             <ul>
