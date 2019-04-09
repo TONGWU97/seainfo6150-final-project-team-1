@@ -8,12 +8,12 @@ const Products = ({ categories, products }) => {
   return products.map(product => {
     const category = categories[product.categoryId];
     return (
-      <div>
-        {product.available == true ?
+      <div key={product.id}>
+        {product.available === true ?
           <div className={styles.products} key={product.id}>
             <span>
               <Link to={`/products/${product.categoryId}/${product.id}`}>
-                <img className={styles.productsImage} src={category.img.sm} />
+                <img className={styles.productsImage} src={category.img.sm} alt={category.id} />
               </Link>
             </span>
             <ul>
@@ -30,7 +30,7 @@ const Products = ({ categories, products }) => {
           :
           <div className={styles.products} key={product.id}>
             <span>
-              <img className={styles.productsImageUnavailable} src={category.img.sm} />
+              <img className={styles.productsImageUnavailable} src={category.img.sm} alt={category.id}/>
             </span>
             <ul>
               <div className={styles.unavailableText}>

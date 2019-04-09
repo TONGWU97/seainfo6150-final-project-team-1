@@ -452,7 +452,7 @@ class OrderStep1 extends Component {
           return (
             <div className={style.oneline}>
               <h4>{options.monogram.name}</h4>
-              <div className={style.select}>
+              <div className={style.inputText}>
                 <input
                   className={style.selectText}
                   onChange={setProductOption.bind(null, 'monogram')}
