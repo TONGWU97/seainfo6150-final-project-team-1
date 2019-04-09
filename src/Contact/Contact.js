@@ -11,21 +11,23 @@ const Contact = () => (
   <p>Feel free to contact us.</p>
 
   <table>
-    <tr>
-      <td><img src = "./assets/img/contact/email.png"/></td>
-      <td>Email</td>
-      <td>contact@vechicledealer.com</td>
-    </tr>
-    <tr>
-      <td><img src = "./assets/img/contact/phone.png" /></td>
-      <td>Phone</td>
-      <td>(206)382-4327</td>
-    </tr>
-    <tr>
-      <td><img src = "./assets/img/contact/address.png" /></td>
-      <td>Address</td>
-      <td>401 Terry Street, Seattle, WA98109</td>
-    </tr>
+    <tbody>
+      <tr>
+        <td><img src = "./assets/img/contact/email.png" alt='Email'/></td>
+        <td>Email</td>
+        <td>contact@vechicledealer.com</td>
+      </tr>
+      <tr>
+        <td><img src = "./assets/img/contact/phone.png" alt='Phone'/></td>
+        <td>Phone</td>
+        <td>(206)382-4327</td>
+      </tr>
+      <tr>
+        <td><img src = "./assets/img/contact/address.png" alt='Address' /></td>
+        <td>Address</td>
+        <td>401 Terry Street, Seattle, WA98109</td>
+      </tr>
+    </tbody>
   </table>
   </div>
 
