@@ -7,7 +7,9 @@ import {
   selectProductId,
   setProductOption,
   setUserInfo,
-  viewProduct
+  viewProduct,
+  checkSubmit,
+  checkUserInfoSubmit
 } from './actions/actions';
 
 
@@ -40,9 +42,14 @@ let App = (props) => (
 
       <main>
         {/* start error display -- I suggest you leave this here */}
-        {
-          props.error && <Error error={props.error} />
-        }
+        {/*{*/}
+          {/*props.error &&*/}
+
+          {/*Object.keys(props.error).map((error, index) => {*/}
+              {/*return <Error key={index} error={error} />*/}
+          {/*})*/}
+
+        {/*}*/}
         {/* end error display */}
 
         <Switch>
@@ -136,6 +143,8 @@ App = connect(
       setProductOption: (optionId, e) => {
         dispatch(setProductOption({ id: optionId, e }))
       },
+      checkSubmit: (selectedOptions) => dispatch(checkSubmit(selectedOptions)),
+      checkUserInfoSubmit:(userInfo) => dispatch(checkUserInfoSubmit(userInfo)),
       setUserInfo: (infoId, e) => {
         dispatch(setUserInfo({ id: infoId, e }))
       },

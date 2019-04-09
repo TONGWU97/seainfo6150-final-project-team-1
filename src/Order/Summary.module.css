@@ -1,0 +1,81 @@
+.summaryPage{
+    margin: 0 1% 0 1%;
+    padding: 0 1% 0 1%;
+}
+.oneline{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.optionTitle{
+    width: 20rem;
+    margin-right: 2%;
+}
+.informationHeader{
+    margin-top: 2%;
+}
+.displayCarInforAndOptions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.displayOptions {
+    display: flex;
+    flex-direction: column;
+    margin-right: 2%;
+    padding: 2%;
+}
+.selectedOption{
+    margin-right: 5%;
+    padding: 2%;
+    border: gainsboro dashed 1px;
+    width: 40%;
+    height: fit-content;;
+}
+.carInfo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    align-content: right;
+}
+.carImage{
+    width: 100%;
+}
+.describe {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.userInfo{
+    border: gainsboro dashed 1px;
+
+}
+.onelineUserInfo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 1%;
+}
+.userTitle, .userTitleLong {
+    width: 12rem;
+    font-weight: bold;
+    margin-right: 1%;
+}
+.userTitleLong {
+    width: 18rem;
+}
+.valueInfo{
+    margin-left: 13rem;
+}
+.sigleItem {
+    margin-right: 1%;
+}
+.fieldSet {
+    border: none;
+}
+
+@media print {
+    header, footer, .categories {
+        display: none;
+    }
+}
