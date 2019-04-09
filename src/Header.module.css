@@ -2,13 +2,18 @@
     background-image: url('/assets/img/background/banner.jpg');
     background-size: 100% 100%;
     height: 28rem;
+    min-width: 30rem;
+}
+
+.headerNavigate{
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     padding-bottom: 0.8rem;
     font-size: 2.8rem;
-    min-width: 30rem;
+    height: 26rem;
 }
+
 .item{
     margin-left: 3%;
     padding: 0.5%;
@@ -18,6 +23,14 @@
 .item:hover{
     text-decoration: underline;
 }
+
+.dealerName{
+    position: absolute;
+    color: #fff;
+    padding: 3% 0 5% 3%;
+    font-size: 5rem;
+}
+
 @media (max-width: 40rem) {
     .header{
         display: flex;
