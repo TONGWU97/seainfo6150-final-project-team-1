@@ -39,7 +39,7 @@ class Summary extends Component {
 
       return (
         <div className={style.carInfo}>
-          <img className={style.carImage} src={category.img.lg} />
+          <img className={style.carImage} src={category.img.lg} alt={category.id}/>
           <div className={style.describe}>
             <h2>{product.title}</h2>
             <div>year: {product.year}</div>

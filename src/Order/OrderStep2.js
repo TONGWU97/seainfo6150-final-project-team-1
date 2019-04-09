@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Redirect } from "react-router-dom";
 import style from './OrderStep2.module.css';
 import { Link } from 'react-router-dom';
 import Error from '../Error/Error'
@@ -50,7 +49,7 @@ class OrderStep2 extends Component {
         <div>
           <hr/>
           <div className={style.item}>
-            <img src={category.img.sm} />
+            <img src={category.img.sm} alt={category.id}/>
             <div className={style.describe}>
               <div>{product.title}</div>
               <div>year: {product.year}</div>

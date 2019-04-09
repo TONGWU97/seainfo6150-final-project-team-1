@@ -55,20 +55,52 @@ export default (
           selectedOptions = {
             numSeats: 8
           };
+          state.error = {
+            'submitFirstStep': 'Please make sure you have filled out all required fields',
+            'color': 'You must select one color',
+            'interiorFabricColor': 'You must set the interior fabric color',
+            'dashboardColor': 'You must choose the dashboard color',
+            'dashboardLightsColor': 'You must choose the dashboard lights color',
+            'hubcapsMaterial': 'You must choose the hubcaps material',
+            'numExhausts': 'You must set the number of exhausts',
+            'spareTire': 'You must choose the spare tire',
+            'engine': 'You must choose the engine',
+            'floormatsColor': 'You must choose the floormats color',
+          };
           break;
           case 'sportsCar':
           selectedOptions = {
             numSeats: 2
           };
-          let error = {...state.error};
-          state.error = omit(error, 'numSeats');
+          state.error = {
+            'submitFirstStep': 'Please make sure you have filled out all required fields',
+            'color': 'You must select one color',
+            'interiorFabricColor': 'You must set the interior fabric color',
+            'dashboardColor': 'You must choose the dashboard color',
+            'dashboardLightsColor': 'You must choose the dashboard lights color',
+            'hubcapsMaterial': 'You must choose the hubcaps material',
+            'numExhausts': 'You must set the number of exhausts',
+            'spareTire': 'You must choose the spare tire',
+            'engine': 'You must choose the engine',
+            'floormatsColor': 'You must choose the floormats color',
+          };
           break;
         case 'taxi':
           selectedOptions = {
             color: '#ffff00'
           };
-          error = {...state.error};
-          state.error = omit(error, 'color');
+          state.error = {
+            'submitFirstStep': 'Please make sure you have filled out all required fields',
+            'numSeats': 'You must set the number of seats',
+            'interiorFabricColor': 'You must set the interior fabric color',
+            'dashboardColor': 'You must choose the dashboard color',
+            'dashboardLightsColor': 'You must choose the dashboard lights color',
+            'hubcapsMaterial': 'You must choose the hubcaps material',
+            'numExhausts': 'You must set the number of exhausts',
+            'spareTire': 'You must choose the spare tire',
+            'engine': 'You must choose the engine',
+            'floormatsColor': 'You must choose the floormats color',
+          };
           break;
         case 'fireEngine':
           selectedOptions = {
@@ -78,18 +110,52 @@ export default (
             hasRadio: false,
             hasCigaretteLighters: false
           };
-          error = {...state.error};
-          state.error = omit(error, 'color');
-          state.error = omit(error, 'numSeats');
+          state.error = {
+            'submitFirstStep': 'Please make sure you have filled out all required fields',
+            'interiorFabricColor': 'You must set the interior fabric color',
+            'dashboardColor': 'You must choose the dashboard color',
+            'dashboardLightsColor': 'You must choose the dashboard lights color',
+            'hubcapsMaterial': 'You must choose the hubcaps material',
+            'numExhausts': 'You must set the number of exhausts',
+            'spareTire': 'You must choose the spare tire',
+            'engine': 'You must choose the engine',
+            'floormatsColor': 'You must choose the floormats color',
+          };
           break;
         case 'jeep':
           selectedOptions = {
             hasTintedWindows: false,
             hasAirConditioning: false
           };
+          state.error = {
+            'submitFirstStep': 'Please make sure you have filled out all required fields',
+            'color': 'You must select one color',
+            'numSeats': 'You must set the number of seats',
+            'interiorFabricColor': 'You must set the interior fabric color',
+            'dashboardColor': 'You must choose the dashboard color',
+            'dashboardLightsColor': 'You must choose the dashboard lights color',
+            'hubcapsMaterial': 'You must choose the hubcaps material',
+            'numExhausts': 'You must set the number of exhausts',
+            'spareTire': 'You must choose the spare tire',
+            'engine': 'You must choose the engine',
+            'floormatsColor': 'You must choose the floormats color',
+          };
           break;
         default:
-          selectedOptions = {}
+          selectedOptions = {};
+          state.error = {
+            'submitFirstStep': 'Please make sure you have filled out all required fields',
+            'color': 'You must select one color',
+            'numSeats': 'You must set the number of seats',
+            'interiorFabricColor': 'You must set the interior fabric color',
+            'dashboardColor': 'You must choose the dashboard color',
+            'dashboardLightsColor': 'You must choose the dashboard lights color',
+            'hubcapsMaterial': 'You must choose the hubcaps material',
+            'numExhausts': 'You must set the number of exhausts',
+            'spareTire': 'You must choose the spare tire',
+            'engine': 'You must choose the engine',
+            'floormatsColor': 'You must choose the floormats color',
+          };
       }
 
       return {
@@ -141,7 +207,7 @@ export default (
       if (!action.payload || !action.payload.errorName) {
         return state;
       }
-      const errorname = action.payload.errorName;
+
       let currentError = omit(state.error, [action.payload.errorName]);
       if (Object.keys(currentError).length === 1 && Object.keys(currentError)[0] === 'submitFirstStep') {
         currentError = omit(currentError, ['submitFirstStep']);
@@ -165,7 +231,6 @@ export default (
         if (!action.payload || !action.payload.errorName) {
           return state;
         }
-        const userInfoErrorId = action.payload.errorName;
         let currentUserInfoError = omit(state.userInfoError, [action.payload.errorName]);
         if (Object.keys(currentUserInfoError).length === 1 && Object.keys(currentUserInfoError)[0] === 'submitSecondStep') {
             currentUserInfoError = omit(currentUserInfoError, ['submitSecondStep']);

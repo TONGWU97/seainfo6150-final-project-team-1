@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styles from './App.module.css';
 
 import {
@@ -20,7 +20,7 @@ import Contact from './Contact/Contact';
 import AllProducts from './AllProducts/AllProducts';
 import Categories from './Categories/Categories';
 import CategoryProducts from './CategoryProducts/CategoryProducts';
-import Error from './Error/Error';
+// import Error from './Error/Error';
 import ProductDetail from './ProductDetail/ProductDetail';
 import OrderStep1 from './Order/OrderStep1';
 import OrderStep2 from './Order/OrderStep2';

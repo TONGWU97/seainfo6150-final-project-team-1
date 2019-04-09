@@ -28,11 +28,8 @@ class OrderStep1 extends Component {
       options,
       selectedProductId,
       setProductOption,
-      orderedProducts,
       products,
       categories,
-      deleteProduct,
-      totalPrice,
       selectedOptions,
       error,
       checkSubmit
@@ -48,7 +45,7 @@ class OrderStep1 extends Component {
           <div>
               <hr/>
               <div className={style.item}>
-                  <img src={category.img.sm} />
+                  <img src={category.img.sm} alt={category.id}/>
                   <div className={style.describe}>
                       <div>{product.title}</div>
                       <div>year: {product.year}</div>
