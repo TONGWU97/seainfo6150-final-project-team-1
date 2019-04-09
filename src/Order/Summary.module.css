@@ -1,6 +1,7 @@
 .summaryPage{
     margin: 0 1% 0 1%;
     padding: 0 1% 0 1%;
+    min-width: 30rem;
 }
 .oneline{
     display: flex;
@@ -16,7 +17,7 @@
 }
 .displayCarInforAndOptions{
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
 .displayOptions {
@@ -73,9 +74,34 @@
 .fieldSet {
     border: none;
 }
+.button{
+    font-size: 1.8rem;
+    padding: 1.5rem 1.5rem;
+    border-radius: 1rem;
+}
+.button:hover{
+    background-color: gray;
+    color: #ededed;
+}
+@media (max-width: 40rem) {
+  .displayCarInforAndOptions{
+    display: flex;
+    flex-direction: column;
+  }
+  .selectedOption{
+    width: 90%;
+  }
+}
 
 @media print {
-    header, footer, .categories {
+     .button {
         display: none;
     }
+    @page {
+        margin: 10px;
+    }
+    h2 {
+        break-before: page;
+    }
+
 }

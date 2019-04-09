@@ -108,6 +108,11 @@ class Summary extends Component {
       <form className={style.summaryPage} onSubmit={this.handleSubmit.bind(this)}>
 
         <div className={style.displayCarInforAndOptions}>
+            <div className={style.selectedOption}>
+                <h2>Selected car information</h2>
+                <hr/>
+                {displayCarInfo()}
+            </div>
         {/* This will iterate through all the selected options so you can see what the user chose. */}
 
           <div className={style.displayOptions}>
@@ -127,11 +132,7 @@ class Summary extends Component {
               })
             }
           </div>
-          <div className={style.selectedOption}>
-            <h2>Selected car information</h2>
-            <hr/>
-            {displayCarInfo()}
-          </div>
+
         </div>
         {/* This will iterate through all the user info so you can see what the user entered. */}
         <ul className={style.userInfo}>
@@ -147,7 +148,7 @@ class Summary extends Component {
         />
 
         <fieldset className={style.fieldSet}>
-          <input type="submit" value="Submit order" />
+          <input className={style.button} type="submit" value="Submit order" />
         </fieldset>
       </form>
     )

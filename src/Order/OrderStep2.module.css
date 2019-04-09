@@ -1,6 +1,8 @@
 .paymentInfo {
     margin: 0 1% 0 1%;
     padding: 0 1% 0 1%;
+    min-width: 30rem;
+    font-size: 1.9rem;
 }
 .title{
     display: grid;
@@ -130,7 +132,7 @@
 
 .allOptions{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 }
 .oneline{
     display: flex;
@@ -149,4 +151,27 @@
 }
 .optionTitle{
     width: 20rem;
+}
+@media (max-width: 40rem) {
+    .title{
+        display: none;
+    }
+    .item{
+        display: flex;
+        flex-direction: column;
+    }
+    .allOptions{
+        grid-template-columns: 1fr;
+    }
+    .oneline{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width: 65rem) {
+
+    .oneline{
+        display: flex;
+        flex-direction: column;
+    }
 }

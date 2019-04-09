@@ -5,7 +5,7 @@
     flex-wrap: nowrap;
     margin: 1% 1% 1% 1%;
     list-style: none;
-
+    min-width: 30rem;
 }
 .link {
     text-decoration: none;
@@ -31,4 +31,22 @@
     width: 80%;
 }
 
-/*todo change to list/button if window is small*/
+@media (max-width: 40rem) {
+    .categories{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 1% 1% 1% 1%;
+        list-style: none;
+        min-width: 30rem;
+    }
+    .category>img{
+        width: 5rem;
+    }
+}
+@media print {
+    .categories{
+        display: none;
+    }
+}

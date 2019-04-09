@@ -60,11 +60,15 @@ class OrderStep1 extends Component {
 
       const setHasSelector = (arrtibute) => {
           return (
-              <select onChange={setProductOption.bind(null, arrtibute)} defaultValue="none">
-                  <option value="none" disabled>Select one</option>
-                  <option value={true}>Yes</option>
-                  <option value={false}>No</option>
-              </select>
+              <div className={style.select}>
+                  <select className={style.selectText} onChange={setProductOption.bind(null, arrtibute)} defaultValue="none">
+                      <option className={style.optionsForSelect} value="none" disabled>Select one</option>
+                      <option className={style.optionsForSelect} value={true}>Yes</option>
+                      <option className={style.optionsForSelect} value={false}>No</option>
+                  </select>
+                  <span className={style.selectHeighlight}></span>
+                  <span className={style.selectBar}></span>
+              </div>
           )
       };
 
@@ -108,13 +112,17 @@ class OrderStep1 extends Component {
             return ( <div>{options.numSeats.requirements.fireEngine}</div>)
         } else {
           return (
-            <input
-              type="text"
-              name='numSeats'
-              className={style.num}
-              value={selectedOptions.numSeats}
-              onChange={setProductOption.bind(null, 'numSeats')}
-            />
+            <div className={style.inputText}>
+              <input
+                type="number"
+                name='numSeats'
+                className={style.selectText}
+                value={selectedOptions.numSeats}
+                onChange={setProductOption.bind(null, 'numSeats')}
+              />
+              <span className={style.selectHeighlight}></span>
+              <span className={style.selectBar}></span>
+            </div>
           )
         }
 
@@ -132,18 +140,22 @@ class OrderStep1 extends Component {
 
       const displayDropDownLists = (type, values) => {
           return (
-              <select onChange={setProductOption.bind(null, type)}
-                      defaultValue="none">
-                  <option value="none">Select one</option>
+              <div className={style.select}>
+                  <select className={style.selectText} onChange={setProductOption.bind(null, type)}
+                          defaultValue="none">
+                      <option value="none">Select one</option>
 
-                  {values.map((option, index) => {
-                      return (
-                          <option value={option} key={index}>
-                              {option}
-                          </option>
-                      )})
-                  }
-              </select>
+                      {values.map((option, index) => {
+                          return (
+                              <option value={option} key={index}>
+                                  {option}
+                              </option>
+                          )})
+                      }
+                  </select>
+                  <span className={style.selectHeighlight}></span>
+                  <span className={style.selectBar}></span>
+              </div>
           )
       };
 
@@ -163,29 +175,41 @@ class OrderStep1 extends Component {
       };
       const displayNumberOfExhausts = () => {//1-4
         return (
+          <div className={style.inputText}>
             <input
-                type="text"
-                name='numExhausts'
-                className={style.num}
-                value={selectedOptions.numExhausts}
-                onChange={setProductOption.bind(null, 'numExhausts')}
+              type="text"
+              name='numExhausts'
+              className={style.selectText}
+              value={selectedOptions.numExhausts}
+              onChange={setProductOption.bind(null, 'numExhausts')}
             />
+            <span className={style.selectHeighlight}></span>
+            <span className={style.selectBar}></span>
+          </div>
         )
       };
       const selectTintedWindows = (product, category) => {
           if (category.id === "fireEngine") {
               return (
-                  <select onChange={setProductOption.bind(null, 'hasTintedWindows')}>
+                  <div className={style.select}>
+                  <select className={style.selectText} onChange={setProductOption.bind(null, 'hasTintedWindows')}>
                       <option value={true} disabled>Yes</option>
                       <option value={false}>No</option>
                   </select>
+                      <span className={style.selectHeighlight}></span>
+                      <span className={style.selectBar}></span>
+                  </div>
               )
           } else if (category.id === "jeep") {
               return (
-                  <select onChange={setProductOption.bind(null, 'hasTintedWindows')}>
+                  <div className={style.select}>
+                    <select className={style.selectText} onChange={setProductOption.bind(null, 'hasTintedWindows')}>
                       <option value={true} disabled>Yes</option>
                       <option value={false}>No</option>
-                  </select>
+                    </select>
+                      <span className={style.selectHeighlight}></span>
+                      <span className={style.selectBar}></span>
+                  </div>
               )
           } else {
               return (
@@ -196,10 +220,14 @@ class OrderStep1 extends Component {
       const selectRadio = (product, category) => {
           if (category.id === "fireEngine") {
               return (
-                  <select onChange={setProductOption.bind(null, 'hasRadio')}>
+                  <div className={style.select}>
+                    <select className={style.selectText} onChange={setProductOption.bind(null, 'hasRadio')}>
                       <option value={true} disabled>Yes</option>
                       <option value={false}>No</option>
-                  </select>
+                    </select>
+                      <span className={style.selectHeighlight}></span>
+                      <span className={style.selectBar}></span>
+                    </div>
               )
           } else {
               return (
@@ -254,26 +282,36 @@ class OrderStep1 extends Component {
       };
       const selectCupholderNum = () => {
         if (selectedOptions.hasCupholders === 'true') {
-            return (
-              <div className={style.oneline}>
-                <h4>{options.numCupholders.name}</h4>
+          return (
+            <div className={style.oneline}>
+              <h4>{options.numCupholders.name}</h4>
+              <div className={style.inputText}>
                 <input
-                  name='numCupholders'
-                  value={selectedOptions.numCupholders}
-                  onChange={setProductOption.bind(null, 'numCupholders')}
+                 className={style.selectText}
+                 type='number'
+                 name='numCupholders'
+                 value={selectedOptions.numCupholders}
+                 onChange={setProductOption.bind(null, 'numCupholders')}
                 />
+                <span className={style.selectHeighlight}></span>
+                <span className={style.selectBar}></span>
               </div>
+            </div>
 
-            )
+          )
         }
       };
       const selectCigarettLighters = (product, category) => {
         if (category.id === "fireEngine") {
           return (
-            <select onChange={setProductOption.bind(null, 'hasCigaretteLighters')}>
-              <option value={true} disabled>Yes</option>
-              <option value={false}>No</option>
-            </select>
+              <div className={style.select}>
+                <select className={style.selectText} onChange={setProductOption.bind(null, 'hasCigaretteLighters')}>
+                  <option value={true} disabled>Yes</option>
+                  <option value={false}>No</option>
+                </select>
+                <span className={style.selectHeighlight}></span>
+                <span className={style.selectBar}></span>
+              </div>
           )
         } else {
           return (
@@ -286,12 +324,17 @@ class OrderStep1 extends Component {
           return (
             <div className={style.oneline}>
               <h4>{options.numCigaretteLighters.name}</h4>
-              <input
-                name='numCigaretteLighters'
-                onChange={setProductOption.bind(null, 'numCigaretteLighters')}
-                value={selectedOptions.numCigaretteLighters}
-                type="number"
-              />
+                <div className={style.inputText}>
+                  <input
+                    className={style.selectText}
+                    name='numCigaretteLighters'
+                    onChange={setProductOption.bind(null, 'numCigaretteLighters')}
+                    value={selectedOptions.numCigaretteLighters}
+                    type="number"
+                  />
+                  <span className={style.selectHeighlight}></span>
+                  <span className={style.selectBar}></span>
+                </div>
             </div>
           )
         }
@@ -303,18 +346,22 @@ class OrderStep1 extends Component {
         return displayDropDownLists('engine', options.engine.values);
       };
       const selectAriConditioning = (product, category) => {
-          if (category.id === "jeep") {
-              return (
-                  <select onChange={setProductOption.bind(null, 'hasAirConditioning')}>
-                      <option value={true} disabled>Yes</option>
-                      <option value={false}>No</option>
-                  </select>
-              )
-          } else {
-              return (
-                setHasSelector('hasAirConditioning')
-              )
-          }
+        if (category.id === "jeep") {
+          return (
+            <div className={style.select}>
+              <select className={style.selectText} onChange={setProductOption.bind(null, 'hasAirConditioning')}>
+               <option value={true} disabled>Yes</option>
+               <option value={false}>No</option>
+              </select>
+              <span className={style.selectHeighlight}></span>
+              <span className={style.selectBar}></span>
+            </div>
+          )
+        } else {
+          return (
+            setHasSelector('hasAirConditioning')
+          )
+        }
       };
       const selectFloormatsColor = () => {
         return (
@@ -405,10 +452,15 @@ class OrderStep1 extends Component {
           return (
             <div className={style.oneline}>
               <h4>{options.monogram.name}</h4>
-              <input
-                onChange={setProductOption.bind(null, 'monogram')}
-                value={selectedOptions.monogram}
-              />
+              <div className={style.select}>
+                <input
+                  className={style.selectText}
+                  onChange={setProductOption.bind(null, 'monogram')}
+                  value={selectedOptions.monogram}
+                />
+                <span className={style.selectHeighlight}></span>
+                <span className={style.selectBar}></span>
+              </div>
             </div>
           )
         }
@@ -538,9 +590,7 @@ class OrderStep1 extends Component {
                 <h4>Description</h4>
                 <h4>Quantity</h4>
                 <h4>Price</h4>
-                {/*<h4>Delete</h4>*/}
             </div>
-            {/*{OrderedCars()}*/}
             {orderCar()}
 
             {this.renderRedirect()}

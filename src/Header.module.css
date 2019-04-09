@@ -7,6 +7,7 @@
     align-items: flex-end;
     padding-bottom: 0.8rem;
     font-size: 2.8rem;
+    min-width: 30rem;
 }
 .item{
     margin-left: 3%;
@@ -16,4 +17,20 @@
 }
 .item:hover{
     text-decoration: underline;
+}
+@media (max-width: 40rem) {
+    .header{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        min-width: 30rem;
+        flex-wrap: wrap-reverse;
+        font-size: 2rem;
+        background-size: 100% 100%;
+    }
+}
+@media print {
+     .header{
+        display: none;
+    }
 }
