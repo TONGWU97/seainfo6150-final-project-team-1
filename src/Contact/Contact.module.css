@@ -36,7 +36,7 @@
   float: inherit;
   position: relative;
   font-size: 2rem;
-  background-color:hsla(0, 100%, 90%, 0.5);
+  background-color:hsl(0, 0%, 90%, 0.5);
   padding-top: 2%;
   padding-left: 5%;
   padding-bottom: 5%;
