@@ -53,6 +53,9 @@ class OrderStep1 extends Component {
                   <div className={style.count}>1</div>
                   <div className={style.price}>{product.hasOwnProperty('sale') ? product.sale : product.price}</div>
               </div>
+              <h2>Car Options</h2>
+              <div>Select your options for your car.</div>
+              <hr/>
               {CarOptions(selectedProductId)}
           </div>
       )
@@ -94,8 +97,9 @@ class OrderStep1 extends Component {
             <input
               type="color"
               name='color'
-              value= {selectedOptions.color}
-              onChange={setProductOption.bind(null, 'color')}
+              value= {selectedOptions.color||''}
+              onClick={setProductOption.bind(this, 'color')}
+              onChange={setProductOption.bind(this, 'color')}
             />
           )
 
@@ -117,7 +121,7 @@ class OrderStep1 extends Component {
                 type="number"
                 name='numSeats'
                 className={style.selectText}
-                value={selectedOptions.numSeats}
+                value={selectedOptions.numSeats||""}
                 onChange={setProductOption.bind(null, 'numSeats')}
               />
               <span className={style.selectHeighlight}></span>
@@ -132,7 +136,8 @@ class OrderStep1 extends Component {
             <input
                 type="color"
                 name='dashboardLightsColor'
-                value= {selectedOptions.dashboardLightsColor}
+                value= {selectedOptions.dashboardLightsColor||""}
+                onClick={setProductOption.bind(null, 'dashboardLightsColor')}
                 onChange={setProductOption.bind(null, 'dashboardLightsColor')}
             />
         )
@@ -143,7 +148,7 @@ class OrderStep1 extends Component {
               <div className={style.select}>
                   <select className={style.selectText} onChange={setProductOption.bind(null, type)}
                           defaultValue="none">
-                      <option value="none">Select one</option>
+                      <option value="none" disabled>Select one</option>
 
                       {values.map((option, index) => {
                           return (
@@ -180,7 +185,7 @@ class OrderStep1 extends Component {
               type="text"
               name='numExhausts'
               className={style.selectText}
-              value={selectedOptions.numExhausts}
+              value={selectedOptions.numExhausts || ""}
               onChange={setProductOption.bind(null, 'numExhausts')}
             />
             <span className={style.selectHeighlight}></span>
@@ -290,7 +295,7 @@ class OrderStep1 extends Component {
                  className={style.selectText}
                  type='number'
                  name='numCupholders'
-                 value={selectedOptions.numCupholders}
+                 value={selectedOptions.numCupholders || ''}
                  onChange={setProductOption.bind(null, 'numCupholders')}
                 />
                 <span className={style.selectHeighlight}></span>
@@ -329,7 +334,7 @@ class OrderStep1 extends Component {
                     className={style.selectText}
                     name='numCigaretteLighters'
                     onChange={setProductOption.bind(null, 'numCigaretteLighters')}
-                    value={selectedOptions.numCigaretteLighters}
+                    value={selectedOptions.numCigaretteLighters || ''}
                     type="number"
                   />
                   <span className={style.selectHeighlight}></span>
@@ -368,7 +373,8 @@ class OrderStep1 extends Component {
           <input
             type="color"
             name='floormatsColor'
-            value= {selectedOptions.floormatsColor}
+            value= {selectedOptions.floormatsColor || ''}
+            onClick={setProductOption.bind(null, 'floormatsColor')}
             onChange={setProductOption.bind(null, 'floormatsColor')}
           />
         )
@@ -393,7 +399,7 @@ class OrderStep1 extends Component {
                         <input
                           type='radio'
                           name='hoodOrnament'
-                          value={options.hoodOrnament.values[value].id}
+                          value={options.hoodOrnament.values[value].id || ''}
                           onChange={setProductOption.bind(null, 'hoodOrnament')}
                           defaultChecked={value==='battleship'}
                         />
@@ -427,7 +433,7 @@ class OrderStep1 extends Component {
                     <input
                       type='radio'
                       name='trunkMonkey'
-                      value={options.trunkMonkey.values[value].id}
+                      value={options.trunkMonkey.values[value].id || ''}
                       onChange={setProductOption.bind(null, 'trunkMonkey')}
                       defaultChecked={value==='capuchin'}
                       />
@@ -456,7 +462,7 @@ class OrderStep1 extends Component {
                 <input
                   className={style.selectText}
                   onChange={setProductOption.bind(null, 'monogram')}
-                  value={selectedOptions.monogram}
+                  value={selectedOptions.monogram || ''}
                 />
                 <span className={style.selectHeighlight}></span>
                 <span className={style.selectBar}></span>
@@ -554,6 +560,7 @@ class OrderStep1 extends Component {
           <div className={style.options}>
             <h2>Premium options</h2>
             <div>Premium options will add an extra $50 to the base price of the vehicle.</div>
+            <hr/>
             <div className={style.oneline}>
               <h4>{options.hasHoodOrnament.name}</h4>
               {selectHoodOra()}
