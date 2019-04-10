@@ -4,8 +4,8 @@ import style from './NotFound.module.css';
 const NotFound = () => (
 <div>
   <div className = {style.notfound_img}>
-    <img src = "./assets/img/notfound/question.png" />
-    <img src = "./assets/img/notfound/car.png" />
+    <img src = "./assets/img/notfound/question.png" alt='NotFound'/>
+    <img src = "./assets/img/notfound/car.png" alt='NotFound'/>
   </div>
 
     <div className = {style.notfound_text}>
