@@ -1,0 +1,10 @@
+.thankyou{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1%;
+    padding: 1%;
+}
+.thankyouImage {
+    width: 25%;
+}

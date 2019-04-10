@@ -1,0 +1,226 @@
+.shoppingCart{
+    margin: 0 1% 0 1%;
+    padding: 0 1% 0 1%;
+    font-size: 1.9rem;
+    min-width: 30rem;
+}
+.item{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+.describe {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /*background-color: gainsboro;*/
+}
+.title{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 1fr;
+}
+.title>h4{
+    align-self: center;
+    place-self: center;
+}
+
+.count {
+    overflow: hidden;
+    margin: 0 16px 0 -20px;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+.describe,
+.count,
+.operation,
+.price{
+    align-self: center;
+    place-self: center;
+}
+.allOptions{
+    margin: 0 1% 0 4%;
+}
+.options{
+    display: flex;
+    /*grid-template-columns:1fr 1fr;*/
+    flex-direction: column;
+}
+.oneline{
+    padding: 0 1% 0 1%;
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-between;*/
+    align-items: center;
+}
+.oneline>h4 {
+    width: 20rem;
+    margin-right: 15%;
+}
+.options>h2 {
+    text-align: left;
+    padding: 3% 0 1% 0;
+}
+.oras{
+    padding: 0 1% 0 1%;
+}
+.oraType {
+    padding: 0 1% 0 1%;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.singleOra{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 2%;
+}
+.singleOra>img {
+    width: 15rem;
+}
+.operation>a{
+    text-decoration: none;
+    font-size: 1.5rem;
+
+}
+.operation{
+    border-radius: 0.5rem;
+}
+.operation:hover{
+    background-color: #333333;
+    color: #fff;
+}
+.operation>a:hover{
+    color: #fff;
+}
+
+.summary{
+    margin: 1%;
+    padding: 0.5% 5% 0 5%;
+    border-radius: 1rem;
+    border: #eeeeee solid 0.2rem;
+}
+.summaryLine {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+.num {
+    display: inline-block;
+    /*width: 28px;*/
+    /*height: 28px;*/
+    /*line-height: 28px;*/
+    text-align: center;
+    font-size: 1.9rem;
+    color: #999;
+    cursor: pointer;
+    border: 1px solid #e6e6e6;
+}
+.num {
+    width: 58px;
+    height: 26px;
+    color: #333;
+}
+
+.select, .inputText{
+    position: relative;
+    width: 20rem;
+}
+.selectText {
+    position: relative;
+    background-color: transparent;
+    padding: 1rem 1rem 1rem 0;
+    font-size: 1.9rem;
+    width: 20rem;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+    display: inline-block;
+}
+.selectText:focus {
+    outline: none;
+    border-bottom: 1px solid rgba(0,0,0,0);
+}
+.select .selectText {
+    appearance: none;
+    -webkit-appearance: none;
+}
+.inputText .selectText{
+    appearance: none;
+    -webkit-appearance: none;
+}
+.select:after {
+    position: absolute;
+    top:18px;
+    right: 10px;
+    width: 0;
+    height:0;
+    padding: 0;
+    content: '';
+    border-left: 6px solid transparent;
+    border-right: 6px solid transparent;
+    border-top: 6px solid rgba(0,0,0,0.12);
+    pointer-events: none;
+}
+
+.selectText:focus ~ .selectLabel,
+.selectText:valid ~ .selectLabel {
+    color: #2F80ED;
+    top: -20px;
+    -webkit-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -ms-transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+    font-size: 1.5rem;
+}
+.selectBar {
+    position: relative;
+    display: block;
+    width: 20rem;
+}
+.selectBar:before, .selectBar:after {
+    content: '';
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: #2F80ED;
+    -webkit-transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -ms-transition: 0.2s ease all;
+    -o-transition: 0.2s ease all;
+    transition: 0.2s ease all;
+}
+.selectBar:before {
+    left: 50%;
+}
+.selectBar:after{
+    right: 50%;
+}
+.selectText:focus ~ .selectBar:before, .selectText:focus ~ .selectBar:after {
+    width: 50%;
+}
+.selectHighlight {
+    position: absolute;
+    height: 60%;
+    width: 16rem;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+}
+.optionsForSelect {
+    position: relative;
+}
+@media (max-width: 40rem) {
+    .title{
+        display: none;
+    }
+    .item{
+        display: flex;
+        flex-direction: column;
+    }
+}

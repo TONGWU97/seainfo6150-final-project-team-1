@@ -71,6 +71,11 @@ button {
     border-radius: 1rem;
 }
 
+button img {
+    width: 32px;
+    height: 32px;
+}
+
 button:hover {
     background-color: gray;
     color: #ededed;

@@ -1,13 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux'
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import styles from './App.module.css';
 
 import {
   selectProductId,
   setProductOption,
   setUserInfo,
-  viewProduct
+  viewProduct,
+  checkSubmit,
+  checkUserInfoSubmit
 } from './actions/actions';
 
 
@@ -18,7 +20,7 @@ import Contact from './Contact/Contact';
 import AllProducts from './AllProducts/AllProducts';
 import Categories from './Categories/Categories';
 import CategoryProducts from './CategoryProducts/CategoryProducts';
-import Error from './Error/Error';
+// import Error from './Error/Error';
 import ProductDetail from './ProductDetail/ProductDetail';
 import OrderStep1 from './Order/OrderStep1';
 import OrderStep2 from './Order/OrderStep2';
@@ -40,9 +42,14 @@ let App = (props) => (
 
       <main>
         {/* start error display -- I suggest you leave this here */}
-        {
-          props.error && <Error error={props.error} />
-        }
+        {/*{*/}
+          {/*props.error &&*/}
+
+          {/*Object.keys(props.error).map((error, index) => {*/}
+              {/*return <Error key={index} error={error} />*/}
+          {/*})*/}
+
+        {/*}*/}
         {/* end error display */}
 
         <Switch>
@@ -136,6 +143,8 @@ App = connect(
       setProductOption: (optionId, e) => {
         dispatch(setProductOption({ id: optionId, e }))
       },
+      checkSubmit: (selectedOptions) => dispatch(checkSubmit(selectedOptions)),
+      checkUserInfoSubmit:(userInfo) => dispatch(checkUserInfoSubmit(userInfo)),
       setUserInfo: (infoId, e) => {
         dispatch(setUserInfo({ id: infoId, e }))
       },

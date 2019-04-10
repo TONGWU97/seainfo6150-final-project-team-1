@@ -12,7 +12,7 @@ const ViewedProducts = ({ categories, products }) => {
     return (
       <div className={styles.ViewedProducts} key={`${product.id}-${index}`}>
         <Link className={styles.ViewedImage} to={`/products/${category.id}/${product.id}`}>
-          <img src={category.img.sm} />
+          <img src={category.img.sm} alt={category.id}/>
           <div className={styles.HiddenText}> 
             <ul>
             <li>price:{product.price} </li>
