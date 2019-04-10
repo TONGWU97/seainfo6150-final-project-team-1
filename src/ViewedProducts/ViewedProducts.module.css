@@ -33,6 +33,12 @@
 }
 .ViewedImage li {
     font-size: 16px;
-    margin-top: 5%;
+    margin-top: 3%;
     color: black;
+}
+.ViewedImage .price {
+    text-align: center;
+}
+.ViewedImage .description {
+    text-align: left;
 }

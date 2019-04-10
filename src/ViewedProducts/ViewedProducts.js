@@ -15,8 +15,8 @@ const ViewedProducts = ({ categories, products }) => {
           <img src={category.img.sm} alt={category.id}/>
           <div className={styles.HiddenText}> 
             <ul>
-            <li>price:{product.price} </li>
-            <li>{product.description} </li>
+            <li className={styles.price}>price:{product.price} </li>
+            <li className={styles.description}>{product.description} </li>
             </ul>
           </div>
         </Link>
