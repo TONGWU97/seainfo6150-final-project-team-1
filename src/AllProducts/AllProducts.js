@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProductsForHome from '../Products/ProductsForHome';
+import ProductsForHome from './ProductsForHome';
 import styles from './AllProducts.module.css';
 
 const AllProducts = ({ categories, products }) => (

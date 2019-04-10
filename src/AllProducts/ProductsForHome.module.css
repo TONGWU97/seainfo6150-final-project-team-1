@@ -1,23 +1,36 @@
-.ViewedProducts {
+.list {
+    margin-left:10%;
     display: inline;
-    flex-direction: row;
-    left: 30px;
+    list-style-type: none;
+    text-decoration: none;
+    position: relative;
+    margin-left: 10%;
 }
-.ViewedImage {
-    margin-left:5%;
+.list :hover {
+    text-decoration: underline;
+}
+
+.soldOut {
+    color: red;
+    float: left;
+}
+.AllProducts {
+    margin-left:10%;
+    margin-bottom: 0;
     display: inline-block;
     list-style-type: none;
     text-decoration: none;
     position: relative;
 }
-.ViewedImage:hover {
+.AllProducts:hover {
     border: none;
     opacity: 0.7;
 }
-.ViewedImage:hover ul {
+.AllProducts:hover ul {
     height: 50%;
+    
 }
-.ViewedImage ul {
+.AllProducts ul {
     list-style-type: none;
     position: absolute;
     left: 0;
@@ -28,11 +41,10 @@
     width: 25rem; 
     background:	#DDDDDD;
     opacity: 0.8;
-   
     text-align: center;
 }
-.ViewedImage li {
+.AllProducts li {
     font-size: 16px;
-    margin-top: 5%;
-    color: black;
+    margin-top: 2%;
+    color: rgb(0, 0, 0);
 }
