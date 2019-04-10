@@ -11,7 +11,6 @@ const Contact = () => (
   <p>Feel free to contact us.</p>
 
   <table>
-<<<<<<< HEAD
     <tr>
       <td><img src = "./assets/img/contact/email.png"  alt = " " / ></td>
       <td>Email</td>
@@ -27,8 +26,6 @@ const Contact = () => (
       <td>Address</td>
       <td>401 Terry Street, Seattle, WA98109</td>
     </tr>
-=======
-    <tbody>
       <tr>
         <td><img src = "./assets/img/contact/email.png" alt='Email'/></td>
         <td>Email</td>
@@ -44,8 +41,6 @@ const Contact = () => (
         <td>Address</td>
         <td>401 Terry Street, Seattle, WA98109</td>
       </tr>
-    </tbody>
->>>>>>> fb612c2d0f6dd465b83e758b36f5cc25e336b4a8
   </table>
   </div>
 
