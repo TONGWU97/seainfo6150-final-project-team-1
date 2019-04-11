@@ -5,15 +5,19 @@
     text-decoration: none;
     position: relative;
     margin-left: 10%;
+    text-align: center;
 }
 .list :hover {
     text-decoration: underline;
 }
-
-.soldOut {
+.sale {
     color: red;
-    float: left;
+    font-size: 2rem;
 }
+.priceBefore {
+    text-decoration: line-through;
+}
+
 .AllProducts {
     margin-left:10%;
     margin-bottom: 0;
@@ -34,7 +38,7 @@
     list-style-type: none;
     position: absolute;
     left: 0;
-    bottom: 10%;
+    bottom: 5%;
     _bottom: 0px;
     overflow: hidden;
     height: 0;
@@ -42,9 +46,27 @@
     background:	#DDDDDD;
     opacity: 0.8;
     text-align: center;
+    padding-right: 8%;
 }
 .AllProducts li {
     font-size: 16px;
     margin-top: 2%;
     color: rgb(0, 0, 0);
+}
+.unavailableText li {
+    list-style-type: none;
+}
+
+
+.productsImageUnavailable {
+    opacity: 0.6;
+}
+
+.unavailableText {
+    opacity: 0.5;
+    text-align: center;
+}
+.unavailable {
+    list-style-type: none;
+    text-align: center;
 }

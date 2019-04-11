@@ -9,7 +9,6 @@ const AllProducts = ({ categories, products }) => (
   
   
   <div className={styles.grid_style}>
-  
   <ProductsForHome categories={categories} products={products} />
   </div>
 
@@ -22,4 +21,4 @@ AllProducts.propTypes = {
 
 
 export default AllProducts;
-/*Show the previous price if on sale --> red*/
+

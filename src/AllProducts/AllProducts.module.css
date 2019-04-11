@@ -1,12 +1,13 @@
 .grid_style {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 7%;
 }
 img {
     width: 100%;
     height: auto;
 }
-@media  (min-width: 200px) {
+@media  (min-width: 300px) {
     .grid_style {
         display: inline-grid;
         grid-template-columns: 100%;
