@@ -5,10 +5,11 @@ import styles from './AllProducts.module.css';
 
 
 
-
 const AllProducts = ({ categories, products }) => (
   
+  
   <div className={styles.grid_style}>
+  
   <ProductsForHome categories={categories} products={products} />
   </div>
 
