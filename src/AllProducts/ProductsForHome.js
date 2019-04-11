@@ -27,8 +27,8 @@ const ProductsForHome = ({ categories, products}) => {
             <ul>
             <Link className={styles.list} to={`/products/${product.categoryId}/${product.id}`}>
             <li className={styles.title}>{product.title}</li>
-            {product.sale == null ? <li className={styles.price}>price: {product.price}</li> : <li className={styles.priceBefore}>price before: {product.price}</li>}
-            {product.sale == null ? null : <li className={styles.sale}>on sale: {product.sale}</li>}
+            {product.sale == null ? <li className={styles.price}>Price: ${product.price}</li> : <li className={styles.priceBefore}>Price Before: ${product.price}</li>}
+            {product.sale == null ? null : <li className={styles.sale}>On Sale: ${product.sale}</li>}
             
             </Link>
           </ul>
@@ -46,7 +46,7 @@ const ProductsForHome = ({ categories, products}) => {
               <div className={styles.unavailableText}>
                 
                 <li className={styles.title}>{product.title}</li>
-                {product.sale == null ? <li className={styles.price}>price: {product.price}</li> : <li className={styles.priceBefore}>Price Before: {product.price}</li>}
+                {product.sale == null ? <li></li> : <li className={styles.priceBefore}>Price Before: {product.price}</li>}
                 <li className={styles.price}>Price: ${product.price}</li>
               </div>
             </ul>
