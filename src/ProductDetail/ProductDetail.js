@@ -28,10 +28,10 @@ class ProductDetail extends PureComponent {
             </ul>
             <div className={styles.description}>{product.description}</div>
           </div>
-          <div className={styles.detailImage}><img src={category.img.lg} /></div>
+          <div className={styles.detailImage}><img src={category.img.lg} alt={category.id}/></div>
         </div>
           {/* start order button */}
-          <Link className={styles.button} to="/order/1" onClick={selectProductId.bind(null, product.id)}><button><img src="https://img.icons8.com/dotty/80/000000/garage.png"/><div>Add to Cart ▶</div></button></Link>
+          <Link className={styles.button} to="/order/1" onClick={selectProductId.bind(null, product.id)}><button><img src="https://img.icons8.com/dotty/80/000000/garage.png" alt=""/><div>Add to Cart ▶</div></button></Link>
           {/* end order button */}
       </div>
     );

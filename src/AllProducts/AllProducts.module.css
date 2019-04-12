@@ -1,4 +1,35 @@
 .grid_style {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: 7%;
+}
+img {
+    width: 100%;
+    height: auto;
+}
+@media  (min-width: 300px) {
+    .grid_style {
+        display: inline-grid;
+        grid-template-columns: 100%;
+    }
+}
+
+@media (min-width: 600px) {
+    .grid_style {
+        display: inline-grid;
+        grid-template-columns: 50% 50%;
+    }
+}
+@media (min-width: 1000px) {
+    .grid_style {
+        display: inline-grid;
+        grid-template-columns: 33% 33% 33%;
+    }
+}
+
+@media (min-width: 1500px) {
+    .grid_style {
+        display: inline-grid;
+        grid-template-columns: 25% 25% 25% 25% ;
+    }
 }

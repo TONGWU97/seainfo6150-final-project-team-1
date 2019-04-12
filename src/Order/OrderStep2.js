@@ -89,7 +89,7 @@ class OrderStep2 extends Component {
         <div className={style.allInfo}>
           <h2>User Information</h2>
           <div className={style.inputArea}>
-            <input className={style.infoItem} onChange={setUserInfo.bind(null, 'buyerName')} value={userInfo.buyerName}/>
+            <input className={style.infoItem} onChange={setUserInfo.bind(null, 'buyerName')} value={userInfo.buyerName || ''}/>
             <span className={style.highlight}></span>
             <span className={style.bar}></span>
             <label className={style.labelTag}>Name</label>
@@ -98,28 +98,28 @@ class OrderStep2 extends Component {
             <h4>Shipment address</h4>
             <div className={style.oneline}>
               <div className={style.inputArea}>
-                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'ShipmentStreetAddress')} value={userInfo.ShipmentStreetAddress}/>
+                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'ShipmentStreetAddress')} value={userInfo.ShipmentStreetAddress || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>Street address</label>
               </div>
               <div className={style.inputArea}>
                 {/*<div>City</div>*/}
-                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'ShipmentCity')} value={userInfo.ShipmentCity}/>
+                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'ShipmentCity')} value={userInfo.ShipmentCity || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>City</label>
               </div>
               <div className={style.inputArea}>
                 {/*<div>State</div>*/}
-                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'ShipmentState')} value={userInfo.ShipmentState}/>
+                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'ShipmentState')} value={userInfo.ShipmentState || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>State</label>
               </div>
               <div className={style.inputArea}>
                 {/*<div>Zip code</div>*/}
-                <input className={style.infoItem} type='number' onChange={setUserInfo.bind(null, 'ShipmentZipeCode')} value={userInfo.ShipmentZipeCode}/>
+                <input className={style.infoItem} type='number' onChange={setUserInfo.bind(null, 'ShipmentZipeCode')} value={userInfo.ShipmentZipeCode || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>Zip code</label>
@@ -130,25 +130,25 @@ class OrderStep2 extends Component {
             <h4>Billing address</h4>
             <div className={style.oneline}>
               <div className={style.inputArea}>
-                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'BillingStreetAddress')} value={userInfo.BillingStreetAddress}/>
+                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'BillingStreetAddress')} value={userInfo.BillingStreetAddress || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>Street address</label>
               </div>
               <div className={style.inputArea}>
-                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'BillingCity')} value={userInfo.BillingCity}/>
+                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'BillingCity')} value={userInfo.BillingCity || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>City</label>
               </div>
               <div className={style.inputArea}>
-                <input className={style.infoItem} type='state' onChange={setUserInfo.bind(null, 'BillingState')} value={userInfo.BillingState}/>
+                <input className={style.infoItem} type='state' onChange={setUserInfo.bind(null, 'BillingState')} value={userInfo.BillingState || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>State</label>
               </div>
               <div className={style.inputArea}>
-                <input className={style.infoItem} type='number' onChange={setUserInfo.bind(null, 'BillingZipeCode')} value={userInfo.BillingZipeCode}/>
+                <input className={style.infoItem} type='number' onChange={setUserInfo.bind(null, 'BillingZipeCode')} value={userInfo.BillingZipeCode || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>Zip code</label>
@@ -164,7 +164,7 @@ class OrderStep2 extends Component {
                 name="phoneNumberInput"
                 placeholder='Phone Number Here'
                 onChange={setUserInfo.bind(null, 'phoneNumber')}
-                value={userInfo.phoneNumber}/>
+                value={userInfo.phoneNumber || ''}/>
               <span className={style.highlight}></span>
               <span className={style.bar}></span>
               <label className={style.labelTag}>Phone number</label>
@@ -179,7 +179,7 @@ class OrderStep2 extends Component {
                 name="phoneNumberInput"
                 placeholder='Cell Number Here'
                 onChange={setUserInfo.bind(null, 'cellNumber')}
-                value={userInfo.cellNumber}/>
+                value={userInfo.cellNumber || ''}/>
               <span className={style.highlight}></span>
               <span className={style.bar}></span>
               <label className={style.labelTag}>Cell number</label>
@@ -187,7 +187,7 @@ class OrderStep2 extends Component {
             <p><strong>Cell Number: </strong>+1{userInfo.cellNumber}</p>
           </div>
           <div className={style.inputArea}>
-            <input className={style.infoItem} type='date' onChange={setUserInfo.bind(null, 'dateOfBirth')} value={userInfo.dateOfBirth}/>
+            <input className={style.infoItem} type='date' onChange={setUserInfo.bind(null, 'dateOfBirth')} value={userInfo.dateOfBirth || ''}/>
             <span className={style.highlight}></span>
             <span className={style.bar}></span>
             <label className={style.labelTag}>Date of birth</label>

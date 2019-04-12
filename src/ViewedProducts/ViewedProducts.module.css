@@ -3,6 +3,7 @@
     flex-direction: row;
     left: 30px;
 }
+
 .ViewedImage {
     margin-left:5%;
     display: inline-block;
@@ -12,12 +13,13 @@
 }
 .ViewedImage:hover {
     border: none;
-    opacity: 0.6;
+    opacity: 0.7;
 }
 .ViewedImage:hover ul {
     height: 50%;
 }
 .ViewedImage ul {
+    list-style-type: none;
     position: absolute;
     left: 0;
     bottom: 10%;
@@ -31,7 +33,13 @@
     text-align: center;
 }
 .ViewedImage li {
-    font-size: 15px;
-    margin-top: 5%;
+    font-size: 16px;
+    margin-top: 3%;
     color: black;
+}
+.ViewedImage .price {
+    text-align: center;
+}
+.ViewedImage .description {
+    text-align: left;
 }
