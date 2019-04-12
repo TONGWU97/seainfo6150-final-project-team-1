@@ -1,5 +1,5 @@
 .aboutpage:before {
-    height: 80rem;
+    height: 100%;
     width: 100%;
     background-image: url('/assets/img/about/background.jpeg');
     background-size: cover;

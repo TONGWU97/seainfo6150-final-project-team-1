@@ -14,7 +14,7 @@
 
 .contact{
   width: 100%;
-  height: 80%;
+  height: 100%;
   z-index: 1;
   color: black;
   text-align: left;
@@ -22,7 +22,6 @@
   margin-right: 10%;
   margin-bottom: 10%;
   padding-top: 10%;
-  /* border: 10px solid red */
 }
 
 /* .contact_text{
@@ -43,8 +42,8 @@
   z-index: 1;
   font-size: 20px;
   display: block;
-  width: 80%;
-  height: 60%;
+  width: 65%;
+  height: 30%;
 }
 
 .contact_text img{
@@ -58,7 +57,7 @@
   background-repeat: repeat;
   position: absolute;
   font-size: 2rem;
-  height: 80%;
+  height: 100%;
   width: 100%;
   filter:blur(3px);
   z-index: -1;
@@ -70,14 +69,8 @@
   height: 30px;
 }
 
-.contact_background{
-  background-image: url('/assets/img/contact/background.jpg');
-  background-size: cover;
-  background-repeat: repeat;
-  position: absolute;
-  font-size: 2rem;
-  height: 80%;
-  width: 100%;
-  filter:blur(3px);
-  z-index: -1;
+.contact_messagebox{
+  width: 40%;
+  height: 30%;
+  background-color:hsl(0, 0%, 90%, 0.5);
 }

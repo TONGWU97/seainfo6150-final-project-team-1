@@ -29,6 +29,30 @@ const Contact = () => (
   </table>
   </div>
 
+  <div className = {style.contact_messagebox}>
+  <h1>Leave your message, we will contact you as soon as possible.</h1>
+    <form name = "Contact_Form">
+
+    <br></br>
+    Name:
+    <input type = "text" name = "Name" value = "Your Fullname"></input>
+
+    <br></br>
+    Email Address:
+    <input type = "text" name = "email" value = "Email Address"></input>
+
+    <br></br>
+    Subject:
+    <input type = "text" name = "subject" value = "subject"></input>
+
+    <br></br>
+    Message:
+    <textarea>Leave your message.</textarea>
+    <br></br>
+    <button type = "submit" name = "submit" value = "Submit">Submit</button>
+    </form>
+  </div>
+
   </div>
 </div>
 
