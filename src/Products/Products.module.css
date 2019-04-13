@@ -22,6 +22,7 @@
     line-height: 2em;
     justify-content: center;
     align-items: center;
+    margin-left: 5%;
 }
 
 .list {
@@ -36,6 +37,11 @@
 .sale {
     color: red;
     font-size: 3rem;
+}
+
+.detailbutton {
+    margin-top: 3%;
+    font-size: 2rem;
 }
 
 .productsImage:hover {

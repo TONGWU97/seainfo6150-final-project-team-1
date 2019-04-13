@@ -1,25 +1,42 @@
 @media(min-width: 300px) {
     .detailbox {
-    display: grid;
-    grid-template-columns: 90%;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
+        display: grid;
+        grid-template-columns: 90%;
+        /* set the detailList on the bottom and detailImage on the top */
+        grid-template-areas: "top" "bottom";
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+    }
+    .detailList {
+        grid-area: bottom;
+    }
+    .detailList ul {
+        text-align: center;
     }
     .detailImage {
         text-align: center;
+        grid-area: top;
     }
 }
 
 @media(min-width: 900px) {
     .detailbox {
-    display: grid;
-    grid-template-columns: 45% 45%;
-    align-items: center;
-    justify-content: center;
+        display: grid;
+        grid-template-columns: 45% 45%;
+        grid-template-areas: "left right";
+        align-items: center;
+        justify-content: center;
+    }
+    .detailList {
+        grid-area: left;
+    }
+    .detailList ul {
+        text-align: left;
     }
     .detailImage {
-    text-align: right;
+        text-align: right;
+        grid-area: right;
     }
 }
 
@@ -27,10 +44,8 @@
     margin-left: 5%;
 }
 
-
-
 .detailImage img {
-    width: 80%;
+    width: 100%;
     z-index: -1;
 }
 
@@ -67,20 +82,23 @@ h3 {
 
 button {
     font-size: 1.8rem;
-    padding: 1.5rem 1.5rem;
+    padding: 1rem 1rem;
     border-radius: 1rem;
 }
 
 button img {
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
 }
 
 button:hover {
     background-color: gray;
     color: #ededed;
+    cursor: pointer;
 }
 
-.button {
-    margin-left: 45%;
+.addCartButton {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
 }

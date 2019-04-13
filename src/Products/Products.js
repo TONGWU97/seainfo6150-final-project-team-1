@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './Products.module.css';
-
+import ViewedProducts from '../ViewedProducts/ViewedProducts.js';
 
 const Products = ({ categories, products }) => {
   return products.map(product => {
@@ -17,14 +17,17 @@ const Products = ({ categories, products }) => {
               </Link>
             </span>
             <ul>
-              <Link className={styles.list} to={`/products/${product.categoryId}/${product.id}`}>
-                <li className={styles.title}>title: {product.title}</li>
-                <li className={styles.category}>category: {product.categoryId}</li>
-                <li className={styles.year}>year: {product.year}</li>
-                {product.sale == null ? <li className={styles.price}>price: {product.price}</li> : <li className={styles.priceBefore}>price before: {product.price}</li>}
-                {product.sale == null ? null : <li className={styles.sale}>on sale: {product.sale}</li>}
-                <li className={styles.description}>description: {product.description}</li>
+              <div className={styles.list} to={`/products/${product.categoryId}/${product.id}`}>
+                <li className={styles.title}>Title: {product.title}</li>
+                <li className={styles.category}>Category: {product.categoryId}</li>
+                <li className={styles.year}>Year: {product.year}</li>
+                {product.sale == null ? <li className={styles.price}>Price: {product.price}</li> : <li className={styles.priceBefore}>Price Before: {product.price}</li>}
+                {product.sale == null ? null : <li className={styles.sale}>On Sale: {product.sale}</li>}
+                <li className={styles.description}>Description: {product.description}</li>
+                <Link className={styles.click} to={`/products/${product.categoryId}/${product.id}`}>
+                <button className={styles.detailbutton}>See Details ▶</button>
               </Link>
+              </div>
             </ul>
           </div>
           :

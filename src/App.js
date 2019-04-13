@@ -69,6 +69,8 @@ let App = (props) => (
                 <AllProducts
                   categories={props.categories}
                   products={sortedProducts}
+                  viewedProducts={props.viewedProducts}
+                  allProducts={props.products}
                 />
               );
             }}

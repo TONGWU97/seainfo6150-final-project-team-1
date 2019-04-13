@@ -1,24 +1,38 @@
-import React from 'react';
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ProductsForHome from './ProductsForHome';
 import styles from './AllProducts.module.css';
+import ViewedProducts from '../ViewedProducts/ViewedProducts.js';
+
+class AllProducts extends Component {
+  render() {
+    const {
+      categories,
+      products,
+      viewedProducts,
+      allProducts
+    } = this.props;
+
+    return (
+      <div className={styles.grid_style}>
+        <ProductsForHome categories={categories} products={products} />
+        {viewedProducts.length === 0 ? <div></div>: <h2 className={styles.Title}>Viewed Products</h2>}
+        <ViewedProducts
+          categories={categories}
+          products={
+            viewedProducts.map(productId => allProducts[productId])
+          }
+        />
+      </div>
+    )
+  }
+}
+
+  AllProducts.propTypes = {
+    products: PropTypes.array.isRequired
+  };
 
 
-const AllProducts = ({ categories, products }) => (
-  
-  
-  <div className={styles.grid_style}>
-  <ProductsForHome categories={categories} products={products} />
-  </div>
-  
- 
-);
 
-AllProducts.propTypes = {
-  products: PropTypes.array.isRequired
-};
-
-
-
-export default AllProducts;
+  export default AllProducts;
 
