@@ -3,7 +3,7 @@ import style from './Footer.module.css'
 const Footer = () => (
     <div>
         <div className={style.footer}>
-            <div className={style.copyRight}>©2019, Team 1</div>
+            <div className={style.copyRight}>©2019, Team 1 (Wenhui Liu, Yuwei Chang, Tong Wu, Yue Xiao)</div>
             <ul className={style.list}>
                 <li><a className={style.item} href='contact'>Contact</a></li>
                 <span></span>
@@ -18,4 +18,4 @@ const Footer = () => (
 export default Footer;
 /*change the footer to show contact information and add a buutton for returnning to the top
     Order shipping address 和 home address加一个选项same
-*/ 
+*/
