@@ -24,11 +24,10 @@
   background-color:hsl(0, 0%, 90%, 0.5);
   padding-top: 5%;
   padding-left: 5%;
-  padding-bottom: 16%;
   z-index: 1;
   display:inline-block;
-  width:90%;
-  height: 60%;
+  width: 80%;
+  height: 75%;
   margin-top:10%;
   margin-left: 5%;
 }
@@ -58,13 +57,15 @@
 
 .contact_messagebox{
   width: 80%;
-  height: 80%;
+  height: 75%;
   background-color:hsl(0, 0%, 90%, 0.5);
   margin-top: 10%;
   margin-left: 5%;
-  margin-bottom: 10%;
+  margin-bottom: 2%;
   font-style: bold;
+  padding-top: 5%;
 }
+
 
 .contact_messagebox h2{
   padding-left: 10%;
