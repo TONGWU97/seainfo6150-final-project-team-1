@@ -3,9 +3,8 @@ import style from './NotFound.module.css';
 
 const NotFound = () => (
 <div>
-  <div className = {style.notfound_img}>
-    <img src = "./assets/img/notfound/question.png" alt='NotFound'/>
-    <img src = "./assets/img/notfound/car.png" alt='NotFound'/>
+  <div className = {style.notfound}>
+    <img className = {style.notfound_img} src = "https://gifimage.net/wp-content/uploads/2018/11/car-icon-gif-2.gif" alt='NotFound'/>
   </div>
 
     <div className = {style.notfound_text}>

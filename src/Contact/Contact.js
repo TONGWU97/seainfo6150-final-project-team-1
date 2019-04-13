@@ -30,7 +30,7 @@ const Contact = () => (
   </div>
 
   <div className = {style.contact_messagebox}>
-  <h1>Leave your message, we will contact you as soon as possible.</h1>
+  <h2>Leave your message, we will contact you as soon as possible.</h2>
     <form name = "Contact_Form">
 
     <br></br>
