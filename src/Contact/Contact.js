@@ -3,14 +3,17 @@ import style from './Contact.module.css';
 
 const Contact = () => (
 <div>
+
   <div className = {style.contact_background}></div>
-  <div className = {style.contact}>
+
+  <div className = {style.container}>
 
   <div className = {style.contact_text}>
   <h1>Contact</h1>
   <p>Feel free to contact us.</p>
 
   <table>
+  <tbody>
       <tr>
         <td><img src = "./assets/img/contact/email.png" alt='Email'/></td>
         <td>Email</td>
@@ -26,6 +29,7 @@ const Contact = () => (
         <td>Address</td>
         <td>401 Terry Street, Seattle, WA98109</td>
       </tr>
+  </tbody>
   </table>
   </div>
 
@@ -34,19 +38,23 @@ const Contact = () => (
     <form name = "Contact_Form">
 
     <br></br>
-    Name:
-    <input type = "text" name = "Name" value = "Your Fullname"></input>
+    Name
+    <br></br>
+    <input type = "text" name = "Name" value = "Your FullName"></input>
 
     <br></br>
-    Email Address:
+    Email Address
+    <br></br>
     <input type = "text" name = "email" value = "Email Address"></input>
 
     <br></br>
-    Subject:
-    <input type = "text" name = "subject" value = "subject"></input>
+    Subject
+    <br></br>
+    <input type = "text" name = "subject" value = "Subject"></input>
 
     <br></br>
-    Message:
+    Message
+    <br></br>
     <textarea>Leave your message.</textarea>
     <br></br>
     <button type = "submit" name = "submit" value = "Submit">Submit</button>
@@ -55,6 +63,7 @@ const Contact = () => (
 
   </div>
 </div>
+
 
 )
 
