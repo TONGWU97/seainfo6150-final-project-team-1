@@ -12,8 +12,6 @@ class ProductDetail extends PureComponent {
       categories,
       product,
       selectProductId,
-      viewedProducts,
-      allProducts
     } = this.props;
 
     const category = categories[product.categoryId];
