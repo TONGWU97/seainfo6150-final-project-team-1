@@ -4,22 +4,16 @@ import style from './OrderStep1.module.css';
 import Error from '../Error/Error'
 import { Link } from 'react-router-dom';
 
-
-
 class OrderStep1 extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   handleSubmit() {
       this.props.checkSubmit(this.props.selectedOptions);
 
   }
   renderRedirect() {
     if (!this.props.hasError) {
-      return <Link to="/order/2"><button>Go to Step 2</button></Link>;
+      return <Link to="/order/2"><button className={style.buttonToNext}>Go to Step 2</button></Link>;
     } else {
-      return  <button onClick={this.handleSubmit.bind(this)}>Go to Step 2</button>;
+      return  <button className={style.buttonToNext} onClick={this.handleSubmit.bind(this)}>Go to Step 2</button>;
     }
   }
 
@@ -32,7 +26,7 @@ class OrderStep1 extends Component {
       categories,
       selectedOptions,
       error,
-      checkSubmit
+      // checkSubmit
     } = this.props;
     const orderCar = () => {
       if (selectedProductId === null) {
@@ -56,16 +50,26 @@ class OrderStep1 extends Component {
               <h2>Car Options</h2>
               <div>Select your options for your car.</div>
               <hr/>
+              <div className={style.reminder}>* is required filed.</div>
+              <div className={style.navigantions}>
+                  <a onClick={() => jumpToTarget('basicOptions')} className={style.navigantionTitle}>Basic Options</a>
+                  <a onClick={() => jumpToTarget('colors')} className={style.navigantionTitle}>Colors</a>
+                  <a onClick={() => jumpToTarget('accessories')} className={style.navigantionTitle}>Accessories</a>
+                  <a onClick={() => jumpToTarget('premiumOptions')} className={style.navigantionTitle}>Premium options</a>
+              </div>
               {CarOptions(selectedProductId)}
           </div>
       )
+    };
+    const jumpToTarget = (idName) => {
+        window.location.hash=idName;
     };
 
       const setHasSelector = (arrtibute) => {
           return (
               <div className={style.select}>
-                  <select className={style.selectText} onChange={setProductOption.bind(null, arrtibute)} defaultValue="none">
-                      <option className={style.optionsForSelect} value="none" disabled>Select one</option>
+                  <select className={style.selectText} onChange={setProductOption.bind(null, arrtibute)} defaultValue="false">
+                      {/*<option className={style.optionsForSelect} value="none" disabled>Select one</option>*/}
                       <option className={style.optionsForSelect} value={true}>Yes</option>
                       <option className={style.optionsForSelect} value={false}>No</option>
                   </select>
@@ -79,6 +83,7 @@ class OrderStep1 extends Component {
         if (category.id === "taxi") {
           return (
           <input
+              className={style.colorInput}
             type="color"
             value={options.color.requirements.taxi}
             disabled
@@ -86,7 +91,7 @@ class OrderStep1 extends Component {
           )
         } else if (category.id === "fireEngine") {
           return (
-              <input
+              <input className={style.colorInput}
                   type="color"
                   value={options.color.requirements.taxi}
                   disabled
@@ -94,7 +99,7 @@ class OrderStep1 extends Component {
           )
         } else {
           return (
-            <input
+            <input className={style.colorInput}
               type="color"
               name='color'
               value= {selectedOptions.color||''}
@@ -134,6 +139,7 @@ class OrderStep1 extends Component {
       const displayDashboardLightsColor = () => {
         return (
             <input
+                className={style.colorInput}
                 type="color"
                 name='dashboardLightsColor'
                 value= {selectedOptions.dashboardLightsColor||""}
@@ -371,6 +377,7 @@ class OrderStep1 extends Component {
       const selectFloormatsColor = () => {
         return (
           <input
+            className={style.colorInput}
             type="color"
             name='floormatsColor'
             value= {selectedOptions.floormatsColor || ''}
@@ -472,95 +479,131 @@ class OrderStep1 extends Component {
         }
       };
 
+      const checkErrorDisplay=  (item) => {
+          if (error.hasOwnProperty(item) && error[item].length !== 0) {
+              return (
+                  <Error error = {error[item]}/>
+              )
+          }
+      };
+
 
     const CarOptions = (id, index) => {
       const product = products[id];
       const category = categories[product.categoryId];
       return(
         <div className={style.allOptions}>
-          <div className={style.options}>
-            <div className={style.oneline}>
-              <h4>* {options.color.name}</h4>
-              {displayColor(product, category)}
-            </div>
-            <div className={style.oneline}>
-              <h4>* {options.numSeats.name}</h4>
-              {displayNumberOfSeats(product, category)}
-            </div>
-            <div className={style.oneline}>
-              <h4>* {options.interiorFabricColor.name}</h4>
-              {displayInteriorFabricColor()}
-            </div>
-            <div className={style.oneline}>
-              <h4>* {options.dashboardColor.name}</h4>
-              {displayDashBoardColor()}
-            </div>
-            <div className={style.oneline}>
-              <h4>* {options.dashboardLightsColor.name}</h4>
-              {displayDashboardLightsColor()}
-            </div>
-            <div className={style.oneline}>
-              <h4>* {options.hubcapsMaterial.name}</h4>
-              {displayHubcapsMaterial()}
-            </div>
-            <div className={style.oneline}>
-              <h4>{options.hasGPS.name}</h4>
-              {selectGPS()}
-            </div>
-            <div className={style.oneline}>
-              <h4>* {options.numExhausts.name}</h4>
-              {displayNumberOfExhausts()}
-            </div>
-            <div className={style.oneline}>
-              <h4>{options.hasTintedWindows.name}</h4>
-              {selectTintedWindows(product, category)}
-            </div>
-            <div className={style.oneline}>
-              <h4>{options.hasRadio.name}</h4>
-              {selectRadio(product, category)}
+            <div>
+                <h2 className={style.itemName} id='basicOptions'>Basic Options</h2>
+                <hr className={style.line}/>
+                <div className={style.options}>
+                    <div className={style.oneline}>
+                        <h4>* {options.numSeats.name} (1-10)</h4>
+                        {displayNumberOfSeats(product, category)}
+                        {checkErrorDisplay(options.numSeats.id)}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>* {options.hubcapsMaterial.name}</h4>
+                        {displayHubcapsMaterial()}
+                        {checkErrorDisplay(options.hubcapsMaterial.id)}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>* {options.numExhausts.name}(1-4)</h4>
+                        {displayNumberOfExhausts()}
+                        {checkErrorDisplay(options.numExhausts.id)}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>*{options.spareTire.name}</h4>
+                        {spareTireSize()}
+                        {checkErrorDisplay(options.spareTire.id)}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>*{options.engine.name}</h4>
+                        {chooseEngine()}
+                        {checkErrorDisplay(options.engine.id)}
+                    </div>
+                </div>
             </div>
             <div>
-              {selectedRadio(product, category)}
-            </div>
-            <div className={style.oneline}>
-              <h4>{options.hasGloveBox.name}</h4>
-              {selectGolveBox()}
-            </div>
-            <div className={style.oneline}>
-              <h4>{options.hasCupholders.name}</h4>
-              {selectCupholders()}
+                <h2 id='colors' className={style.itemName}>Colors</h2>
+                <hr className={style.line}/>
+                <div className={style.options}>
+                    <div className={style.oneline}>
+                        <h4>* {options.color.name}</h4>
+                        {displayColor(product, category)}
+                        {checkErrorDisplay(options.color.id)}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>* {options.interiorFabricColor.name}</h4>
+                        {displayInteriorFabricColor()}
+                        {checkErrorDisplay(options.interiorFabricColor.id)}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>* {options.dashboardColor.name}</h4>
+                        {displayDashBoardColor()}
+                        {checkErrorDisplay(options.dashboardColor.id)}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>* {options.dashboardLightsColor.name}</h4>
+                        {displayDashboardLightsColor()}
+                        {checkErrorDisplay(options.dashboardLightsColor.id)}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>*{options.floormatsColor.name}</h4>
+                        {selectFloormatsColor()}
+                        {checkErrorDisplay(options.floormatsColor.id)}
+                    </div>
+                </div>
             </div>
             <div>
-              {selectCupholderNum()}
+                <h2 id='accessories' className={style.itemName}>Accessories</h2>
+                <hr className={style.line}/>
+                <div className={style.options}>
+                    <div className={style.oneline}>
+                        <h4>{options.hasGPS.name}</h4>
+                        {selectGPS()}
+                    </div>
+
+                    <div className={style.oneline}>
+                        <h4>{options.hasTintedWindows.name}</h4>
+                        {selectTintedWindows(product, category)}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>{options.hasRadio.name}</h4>
+                        {selectRadio(product, category)}
+                    </div>
+                    <div>
+                        {selectedRadio(product, category)}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>{options.hasGloveBox.name}</h4>
+                        {selectGolveBox()}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>{options.hasCupholders.name}</h4>
+                        {selectCupholders()}
+                    </div>
+                    <div>
+                        {selectCupholderNum()}
+                    </div>
+                    <div className={style.oneline}>
+                        <h4>{options.hasCigaretteLighters.name}</h4>
+                        {selectCigarettLighters(product, category)}
+                    </div>
+                    <div>
+                        {cigarettlighterNum()}
+                    </div>
+
+                    <div className={style.oneline}>
+                        <h4>{options.hasAirConditioning.name}</h4>
+                        {selectAriConditioning(product, category)}
+                    </div>
+                </div>
             </div>
-            <div className={style.oneline}>
-              <h4>{options.hasCigaretteLighters.name}</h4>
-              {selectCigarettLighters(product, category)}
-            </div>
-            <div>
-              {cigarettlighterNum()}
-            </div>
-            <div className={style.oneline}>
-              <h4>*{options.spareTire.name}</h4>
-              {spareTireSize()}
-            </div>
-            <div className={style.oneline}>
-              <h4>*{options.engine.name}</h4>
-              {chooseEngine()}
-            </div>
-            <div className={style.oneline}>
-              <h4>{options.hasAirConditioning.name}</h4>
-              {selectAriConditioning(product, category)}
-            </div>
-            <div className={style.oneline}>
-              <h4>*{options.floormatsColor.name}</h4>
-              {selectFloormatsColor()}
-            </div>
-          </div>
-          <div className={style.options}>
-            <h2>Premium options</h2>
+        <div className={style.options}>
+            <h2 id='premiumOptions' className={style.itemName}>Premium options</h2>
             <div>Premium options will add an extra $50 to the base price of the vehicle.</div>
-            <hr/>
+            <hr className={style.line}/>
             <div className={style.oneline}>
               <h4>{options.hasHoodOrnament.name}</h4>
               {selectHoodOra()}
