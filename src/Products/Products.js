@@ -2,9 +2,13 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import styles from './Products.module.css';
-import ViewedProducts from '../ViewedProducts/ViewedProducts.js';
 
 const Products = ({ categories, products }) => {
+  // const {
+  //   viewedProducts,
+  //   allProducts
+  // } = this.props;
+
   return products.map(product => {
     const category = categories[product.categoryId];
     return (
@@ -52,6 +56,13 @@ const Products = ({ categories, products }) => {
             </div>
           </div>
         }
+        {/* {viewedProducts.length === 0 ? <div></div>: <h2 className={styles.Title}>Viewed Products</h2>}
+        <ViewedProducts
+          categories={categories}
+          products={
+            viewedProducts.map(productId => allProducts[productId])
+          }
+        /> */}
       </div>
     );
   })
