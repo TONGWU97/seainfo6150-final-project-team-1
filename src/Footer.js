@@ -4,13 +4,14 @@ const Footer = () => (
     <div>
         <div className={style.footer}>
             <div className={style.copyRight}>©2019, Team 1 (Wenhui Liu, Yuwei Chang, Tong Wu, Yue Xiao)</div>
-            <ul className={style.list}>
+            <div className={style.contactList}>
+            <ul>
                 <li><a className={style.item} href='contact'>Contact</a></li>
-                <span></span>
                 <li>Email:contact@vechicledealer.com</li>
                 <li>Phone:(206)382-4327</li>
                 <li>401 Terry Street, Seattle, WA 98109</li>
             </ul>
+            </div>
         </div>
     </div>
 );
