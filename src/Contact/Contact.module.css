@@ -5,6 +5,13 @@
   display:grid;
   grid-template-columns: 100%;
 }
+.contact_background {
+  height: 40rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 }
 
 @media(min-width:900px){
@@ -13,6 +20,13 @@
   height:100%;
   display:grid;
   grid-template-columns: 50% 50%;
+}
+.contact_background {
+  height: 80rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 }
 
@@ -52,6 +66,7 @@
   z-index: 1;
   font-size: 20px;
   display: grid;
+  overflow: auto;
 }
 
 .contact_text{
