@@ -9,7 +9,8 @@ import {
   setUserInfo,
   viewProduct,
   checkSubmit,
-  checkUserInfoSubmit
+  checkUserInfoSubmit,
+  setUserBillingInfo
 } from './actions/actions';
 
 
@@ -156,7 +157,8 @@ App = connect(
       setUserInfo: (infoId, e) => {
         dispatch(setUserInfo({ id: infoId, e }))
       },
-      viewProduct: (productId) => dispatch(viewProduct({ id: productId }))
+      viewProduct: (productId) => dispatch(viewProduct({ id: productId })),
+      setUserBillingInfo: (id, value) => dispatch(setUserBillingInfo({id, value}))
     }
   }
 )(App)

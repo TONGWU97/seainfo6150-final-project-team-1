@@ -20,6 +20,15 @@ export const setUserInfo = ({ id, e }) => (dispatch, getState) => {
     dispatch(setInfo({ id, value }));
   }
 };
+export const setUserBillingInfo = ({id, value}) => (dispatch, getState) => {
+    dispatch(removeUserInfoError(id));
+    if (value === null || value === '') {
+        dispatch(removeInfo(id));
+        dispatch(setUserInfoError({errorName:id, error: 'You must fill in your name'}));
+    } else {
+        dispatch(setInfo({ id, value }));
+    }
+};
 
 export const setProductOption = ({ id, e }) => (dispatch, getState) => {
   dispatch(removeError(id));
@@ -114,14 +123,11 @@ export const setProductOption = ({ id, e }) => (dispatch, getState) => {
 
 const removeError = (errorName) => ({
   type: 'REMOVE_ERROR',
-  payload: {
-    ['errorName']: errorName}
+  payload: {errorName}
 });
 const removeUserInfoError = (errorName) => ({
   type: 'REMOVE_SUBMIT_USERINFO_ERROR',
-  payload: {
-    ['errorName']: errorName
-  }
+  payload: {errorName}
 });
 
 const removeOption = (id) => ({

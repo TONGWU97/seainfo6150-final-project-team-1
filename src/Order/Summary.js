@@ -117,7 +117,7 @@ class Summary extends Component {
 
           <div className={style.displayOptions}>
             <h2>Selected options for your car</h2>
-            <hr/>
+            <hr className={style.line}/>
             {
               Object.keys(selectedOptions).map((option) => {
                 const originalOption = options[option];

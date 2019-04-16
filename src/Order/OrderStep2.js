@@ -10,8 +10,26 @@ class OrderStep2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      submittedSuccessfully: false
+      submittedSuccessfully: false,
+        checked: false
     }
+  }
+
+  handleCheckBox() {
+    if (!this.state.checked) {
+        this.props.setUserBillingInfo('BillingStreetAddress', this.props.userInfo.ShipmentStreetAddress);
+        this.props.setUserBillingInfo('BillingCity', this.props.userInfo.ShipmentCity);
+        this.props.setUserBillingInfo('BillingState', this.props.userInfo.ShipmentState);
+        this.props.setUserBillingInfo('BillingZipeCode', this.props.userInfo.ShipmentZipeCode);
+    } else {
+        this.props.setUserBillingInfo('BillingStreetAddress', '');
+        this.props.setUserBillingInfo('BillingCity', '');
+        this.props.setUserBillingInfo('BillingState', '');
+        this.props.setUserBillingInfo('BillingZipeCode', '');
+    }
+    this.setState({
+        checked: !this.state.checked,
+    });
   }
 
   handleSubmit() {
@@ -19,9 +37,9 @@ class OrderStep2 extends Component {
   }
   renderRedirect() {
     if (!this.props.userInfoHasError) {
-      return <Link to="/order/summary"><button>Go to summary</button></Link>;
+      return <Link to="/order/summary"><button className={style.buttonToNext}>Go to summary</button></Link>;
     } else {
-      return  <button onClick={this.handleSubmit.bind(this)}>Go to summary</button>;
+      return  <button className={style.buttonToNext} onClick={this.handleSubmit.bind(this)}>Go to summary</button>;
     }
   }
 
@@ -34,10 +52,16 @@ class OrderStep2 extends Component {
       categories,
       selectedOptions,
       userInfo,
-      checkUserInfoSubmit,
-      userInfoError
+      userInfoError,
     } = this.props;
 
+    const checkErrorDisplay=  (item) => {
+        if (userInfoError.hasOwnProperty(item) && userInfoError[item].length !== 0) {
+            return (
+                <Error error = {userInfoError[item]}/>
+            )
+        }
+    };
     const orderCar = () => {
       if (selectedProductId === null) {
         return <div>You didn't select any car</div>
@@ -67,7 +91,8 @@ class OrderStep2 extends Component {
     const CarOptions = (id, index) => {
       return (
         <div>
-          <h2>Your selected options for you car</h2>
+          <h2 className={style.itemName}>Your selected options for you car</h2>
+          <hr className={style.line}/>
           <div className={style.allOptions}>
             {Object.keys(selectedOptions).map((option, index) => {
               const originalOption = options[option];
@@ -87,13 +112,16 @@ class OrderStep2 extends Component {
     const userInformation = () => {
       return (
         <div className={style.allInfo}>
-          <h2>User Information</h2>
+          <h2 className={style.itemName}>User Information</h2>
+          <hr className={style.line}/>
           <div className={style.inputArea}>
             <input className={style.infoItem} onChange={setUserInfo.bind(null, 'buyerName')} value={userInfo.buyerName || ''}/>
             <span className={style.highlight}></span>
             <span className={style.bar}></span>
             <label className={style.labelTag}>Name</label>
+            {checkErrorDisplay('buyerName')}
           </div>
+
           <div >
             <h4>Shipment address</h4>
             <div className={style.oneline}>
@@ -102,59 +130,131 @@ class OrderStep2 extends Component {
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>Street address</label>
+                {checkErrorDisplay('ShipmentStreetAddress')}
               </div>
               <div className={style.inputArea}>
-                {/*<div>City</div>*/}
                 <input className={style.infoItem} onChange={setUserInfo.bind(null, 'ShipmentCity')} value={userInfo.ShipmentCity || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>City</label>
+                {checkErrorDisplay('ShipmentStreetAddress')}
               </div>
               <div className={style.inputArea}>
-                {/*<div>State</div>*/}
                 <input className={style.infoItem} onChange={setUserInfo.bind(null, 'ShipmentState')} value={userInfo.ShipmentState || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>State</label>
+                {checkErrorDisplay('ShipmentState')}
               </div>
               <div className={style.inputArea}>
-                {/*<div>Zip code</div>*/}
                 <input className={style.infoItem} type='number' onChange={setUserInfo.bind(null, 'ShipmentZipeCode')} value={userInfo.ShipmentZipeCode || ''}/>
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>Zip code</label>
+                {checkErrorDisplay('ShipmentZipeCode')}
               </div>
             </div>
           </div>
-          <div>
-            <h4>Billing address</h4>
-            <div className={style.oneline}>
-              <div className={style.inputArea}>
-                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'BillingStreetAddress')} value={userInfo.BillingStreetAddress || ''}/>
-                <span className={style.highlight}></span>
-                <span className={style.bar}></span>
-                <label className={style.labelTag}>Street address</label>
-              </div>
-              <div className={style.inputArea}>
-                <input className={style.infoItem} onChange={setUserInfo.bind(null, 'BillingCity')} value={userInfo.BillingCity || ''}/>
-                <span className={style.highlight}></span>
-                <span className={style.bar}></span>
-                <label className={style.labelTag}>City</label>
-              </div>
-              <div className={style.inputArea}>
-                <input className={style.infoItem} type='state' onChange={setUserInfo.bind(null, 'BillingState')} value={userInfo.BillingState || ''}/>
-                <span className={style.highlight}></span>
-                <span className={style.bar}></span>
-                <label className={style.labelTag}>State</label>
-              </div>
-              <div className={style.inputArea}>
-                <input className={style.infoItem} type='number' onChange={setUserInfo.bind(null, 'BillingZipeCode')} value={userInfo.BillingZipeCode || ''}/>
-                <span className={style.highlight}></span>
-                <span className={style.bar}></span>
-                <label className={style.labelTag}>Zip code</label>
-              </div>
-            </div>
+          <div className={style.oneline}>
+            <input type="checkbox" onChange={this.handleCheckBox.bind(this)} checked={this.state.checked}/>
+            <label>Same with shipment address</label>
           </div>
+            {this.state.checked === false ?
+              (
+                <div>
+                  <h4>Billing address</h4>
+                  <div className={style.oneline}>
+                    <div className={style.inputArea}>
+                      <input className={style.infoItem} onChange={setUserInfo.bind(null, 'BillingStreetAddress')} value={userInfo.BillingStreetAddress || ''}/>
+                      <span className={style.highlight}></span>
+                      <span className={style.bar}></span>
+                      <label className={style.labelTag}>Street address</label>
+                      {checkErrorDisplay('BillingStreetAddress')}
+                    </div>
+                    <div className={style.inputArea}>
+                      <input className={style.infoItem} onChange={setUserInfo.bind(null, 'BillingCity')} value={userInfo.BillingCity || ''}/>
+                      <span className={style.highlight}></span>
+                      <span className={style.bar}></span>
+                      <label className={style.labelTag}>City</label>
+                      {checkErrorDisplay('BillingCity')}
+                    </div>
+                    <div className={style.inputArea}>
+                      <input className={style.infoItem} onChange={setUserInfo.bind(null, 'BillingState')} value={userInfo.BillingState || ''}/>
+                      <span className={style.highlight}></span>
+                      <span className={style.bar}></span>
+                      <label className={style.labelTag}>State</label>
+                      {checkErrorDisplay('BillingState')}
+                    </div>
+                    <div className={style.inputArea}>
+                      <input className={style.infoItem} type='number' onChange={setUserInfo.bind(null, 'BillingZipeCode')} value={userInfo.BillingZipeCode || ''}/>
+                      <span className={style.highlight}></span>
+                      <span className={style.bar}></span>
+                      <label className={style.labelTag}>Zip code</label>
+                      {checkErrorDisplay('BillingZipeCode')}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <h4>Billing address</h4>
+                  <div className={style.oneline}>
+                    <div className={style.inputArea}>
+                      <input
+                        className={style.infoItem}
+                        onChange={setUserInfo.bind(null, 'BillingStreetAddress')}
+                        placeholder={'Street address'}
+                        value={userInfo.BillingStreetAddress || ''}
+                        disabled
+                      />
+                      <span className={style.highlight}></span>
+                      <span className={style.bar}></span>
+                      {/*<label className={style.labelTag}>Street address</label>*/}
+                      {checkErrorDisplay('BillingStreetAddress')}
+                    </div>
+                    <div className={style.inputArea}>
+                      <input
+                        className={style.infoItem}
+                        onChange={setUserInfo.bind(null, 'BillingCity')}
+                        value={userInfo.BillingCity || ''}
+                        placeholder='City'
+                        disabled
+                      />
+                      <span className={style.highlight}></span>
+                      <span className={style.bar}></span>
+                      {/*<label className={style.labelTag}>City</label>*/}
+                      {checkErrorDisplay('BillingCity')}
+                    </div>
+                    <div className={style.inputArea}>
+                      <input
+                        className={style.infoItem}
+                        onChange={setUserInfo.bind(null, 'BillingState')}
+                        value={userInfo.BillingState || ''}
+                        placeholder='State'
+                        disabled
+                      />
+                      <span className={style.highlight}></span>
+                      <span className={style.bar}></span>
+                      {/*<label className={style.labelTag}>State</label>*/}
+                      {checkErrorDisplay('BillingState')}
+                    </div>
+                    <div className={style.inputArea}>
+                      <input
+                        className={style.infoItem}
+                        type='number'
+                        onChange={setUserInfo.bind(null, 'BillingZipeCode')}
+                        value={userInfo.BillingZipeCode || ''}
+                        placeholder='Zip code'
+                        disabled
+                      />
+                      <span className={style.highlight}></span>
+                      <span className={style.bar}></span>
+                      {/*<label className={style.labelTag}>Zip code</label>*/}
+                      {checkErrorDisplay('BillingZipeCode')}
+                    </div>
+                  </div>
+                </div>
+                )
+            }
 
           <div className={style.inputArea}>
             <div>
@@ -170,6 +270,7 @@ class OrderStep2 extends Component {
               <label className={style.labelTag}>Phone number</label>
             </div>
             <p><strong>Phone Number: </strong>+1{userInfo.phoneNumber}</p>
+            {checkErrorDisplay('phoneNumber')}
           </div>
           <div className={style.inputArea}>
             <div>
@@ -185,12 +286,14 @@ class OrderStep2 extends Component {
               <label className={style.labelTag}>Cell number</label>
             </div>
             <p><strong>Cell Number: </strong>+1{userInfo.cellNumber}</p>
+            {checkErrorDisplay('cellNumber')}
           </div>
           <div className={style.inputArea}>
             <input className={style.infoItem} type='date' onChange={setUserInfo.bind(null, 'dateOfBirth')} value={userInfo.dateOfBirth || ''}/>
             <span className={style.highlight}></span>
             <span className={style.bar}></span>
             <label className={style.labelTag}>Date of birth</label>
+            {checkErrorDisplay('dateOfBirth')}
           </div>
       </div>
       )
@@ -211,13 +314,10 @@ class OrderStep2 extends Component {
         {this.renderRedirect()}
 
         {Object.keys(userInfoError).map((key, index) => {
-          return <Error key={index} error={userInfoError[key]}/>
+            return (key === 'submitSecondStep' ? <Error key={index} error={userInfoError[key]}/>
+                : null)
         })}
-      {/*<form onSubmit={this.handleSubmit.bind(this)}>*/}
-          {/*<fieldset>*/}
-              {/*<input type="submit" value="Go to summary" />*/}
-          {/*</fieldset>*/}
-      {/*</form>*/}
+
       </div>
     )
 

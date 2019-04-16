@@ -41,12 +41,12 @@ const DisplayOptions = (optionValue) => {
             </div>
         )
     }
-    if (value === 'true') {
+    if (value === 'true' || value === true) {
         return (
             <label>Yes</label>
         )
     }
-    if (value === 'false') {
+    if (value === 'false' || value === false) {
         return (
             <label>No</label>
         )

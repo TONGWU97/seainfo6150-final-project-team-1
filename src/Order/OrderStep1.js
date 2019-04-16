@@ -48,14 +48,13 @@ class OrderStep1 extends Component {
                   <div className={style.price}>{product.hasOwnProperty('sale') ? product.sale : product.price}</div>
               </div>
               <h2>Car Options</h2>
-              <div>Select your options for your car.</div>
-              <hr/>
-              <div className={style.reminder}>* is required filed.</div>
+              {/*<hr/>*/}
+
               <div className={style.navigantions}>
-                  <a onClick={() => jumpToTarget('basicOptions')} className={style.navigantionTitle}>Basic Options</a>
-                  <a onClick={() => jumpToTarget('colors')} className={style.navigantionTitle}>Colors</a>
-                  <a onClick={() => jumpToTarget('accessories')} className={style.navigantionTitle}>Accessories</a>
-                  <a onClick={() => jumpToTarget('premiumOptions')} className={style.navigantionTitle}>Premium options</a>
+                  <button onClick={() => jumpToTarget('basicOptions')} className={style.navigantionTitle}>Basic Options</button>
+                  <button onClick={() => jumpToTarget('colors')} className={style.navigantionTitle}>Colors</button>
+                  <button onClick={() => jumpToTarget('accessories')} className={style.navigantionTitle}>Accessories</button>
+                  <button onClick={() => jumpToTarget('premiumOptions')} className={style.navigantionTitle}>Premium options</button>
               </div>
               {CarOptions(selectedProductId)}
           </div>
@@ -152,7 +151,7 @@ class OrderStep1 extends Component {
       const displayDropDownLists = (type, values) => {
           return (
               <div className={style.select}>
-                  <select className={style.selectText} onChange={setProductOption.bind(null, type)}
+                  <select className={style.selectText} onChange={setProductOption.bind(this, type)}
                           defaultValue="none">
                       <option value="none" disabled>Select one</option>
 
@@ -495,6 +494,7 @@ class OrderStep1 extends Component {
         <div className={style.allOptions}>
             <div>
                 <h2 className={style.itemName} id='basicOptions'>Basic Options</h2>
+                <div className={style.reminder}>* is required filed.</div>
                 <hr className={style.line}/>
                 <div className={style.options}>
                     <div className={style.oneline}>
@@ -526,6 +526,7 @@ class OrderStep1 extends Component {
             </div>
             <div>
                 <h2 id='colors' className={style.itemName}>Colors</h2>
+                <div className={style.reminder}>* is required filed.</div>
                 <hr className={style.line}/>
                 <div className={style.options}>
                     <div className={style.oneline}>
@@ -646,7 +647,9 @@ class OrderStep1 extends Component {
             {this.renderRedirect()}
 
             {Object.keys(error).map((key, index) => {
-                return <Error key={index} error={error[key]}/>
+
+                return (key === 'submitFirstStep' ? <Error key={index} error={error[key]}/>
+                : null)
             })}
         </div>
     )
