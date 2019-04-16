@@ -33,13 +33,15 @@
 
 @media (max-width: 40rem) {
     .header{
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
         min-width: 30rem;
         flex-wrap: wrap-reverse;
         font-size: 2rem;
         background-size: 100% 100%;
+    }
+    .headerNavigate{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
 }
 @media print {

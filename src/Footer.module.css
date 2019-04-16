@@ -37,6 +37,15 @@
 .item:hover{
     text-decoration: underline;
 }
+@media (max-width: 40rem) {
+    .footer{
+        min-width: 30rem;
+        font-size: 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}
 
 @media print {
     .footer{
