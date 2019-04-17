@@ -113,11 +113,11 @@ class OrderStep1 extends Component {
 
       const displayNumberOfSeats = (product, category) => {
         if (category.id === "sportsCar") {
-           return ( <div>{options.numSeats.requirements.sportsCar}</div>)
+           return ( <div className={style.inputText}>{options.numSeats.requirements.sportsCar}</div>)
         } else if (category.id === "limousine") {
-            return ( <div>{options.numSeats.requirements.limousine}</div>)
+            return ( <div className={style.inputText}>{options.numSeats.requirements.limousine}</div>)
         } else if (category.id === "fireEngine") {
-            return ( <div>{options.numSeats.requirements.fireEngine}</div>)
+            return ( <div className={style.inputText}>{options.numSeats.requirements.fireEngine}</div>)
         } else {
           return (
             <div className={style.inputText}>
@@ -251,28 +251,36 @@ class OrderStep1 extends Component {
             if (category.id === "taxi" || category.id === "stationWagon") {
                 return (
                     <div className={style.oneline}>
-                        <h4>{options.radioType.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>{options.radioType.name}</h4>
+                        </div>
                         {displayDropDownLists('radioType', options.radioType.values.taxi)}
                     </div>
                 )
             } else if (category.id === "sportsCar" || category.id === "limousine") {
                 return (
                     <div className={style.oneline}>
-                        <h4>{options.radioType.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>{options.radioType.name}</h4>
+                        </div>
                         {displayDropDownLists('radioType', options.radioType.values.sportsCar)}
                     </div>
                 )
             } else if (category.id === "truck" || category.id === "suv" || category.id === 'jeep') {
                 return (
                     <div className={style.oneline}>
-                        <h4>{options.radioType.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>{options.radioType.name}</h4>
+                        </div>
                         {displayDropDownLists('radioType', options.radioType.values.truck)}
                     </div>
                 )
             } else if (category.id === "sedan" ) {
                 return (
                     <div className={style.oneline}>
-                        <h4>{options.radioType.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>{options.radioType.name}</h4>
+                        </div>
                         {displayDropDownLists('radioType', options.radioType.values.sedan)}
                     </div>
                 )
@@ -294,7 +302,9 @@ class OrderStep1 extends Component {
         if (selectedOptions.hasCupholders === 'true') {
           return (
             <div className={style.oneline}>
-              <h4>{options.numCupholders.name}</h4>
+              <div className={style.optionTitle}>
+                <h4>{options.numCupholders.name}</h4>
+              </div>
               <div className={style.inputText}>
                 <input
                  className={style.selectText}
@@ -333,7 +343,9 @@ class OrderStep1 extends Component {
         if (selectedOptions.hasCigaretteLighters === 'true') {
           return (
             <div className={style.oneline}>
-              <h4>{options.numCigaretteLighters.name}</h4>
+              <div className={style.optionTitle}>
+                <h4>{options.numCigaretteLighters.name}</h4>
+              </div>
                 <div className={style.inputText}>
                   <input
                     className={style.selectText}
@@ -395,7 +407,9 @@ class OrderStep1 extends Component {
         if (selectedOptions.hasHoodOrnament === 'true') {
           return(
             <div className={style.oras}>
-              <h4>{options.hoodOrnament.name}</h4>
+              <div className={style.optionTitle}>
+                <h4>{options.hoodOrnament.name}</h4>
+              </div>
               <div className={style.oraType}>
                 {Object.keys(options.hoodOrnament.values).map((value, index) => {
                   return (
@@ -429,7 +443,9 @@ class OrderStep1 extends Component {
         if (selectedOptions.hasTrunkMonkey === 'true') {
         return(
           <div className={style.oras}>
-            <h4>{options.trunkMonkey.name}</h4>
+            <div className={style.optionTitle}>
+              <h4>{options.trunkMonkey.name}</h4>
+            </div>
             <div className={style.oraType}>
               {Object.keys(options.trunkMonkey.values).map((value, index) => {
                 return (
@@ -463,7 +479,9 @@ class OrderStep1 extends Component {
         if (selectedOptions.hasMonogrammedSteeringWheelCover === 'true') {
           return (
             <div className={style.oneline}>
-              <h4>{options.monogram.name}</h4>
+              <div className={style.optionTitle}>
+                <h4>{options.monogram.name}</h4>
+              </div>
               <div className={style.inputText}>
                 <input
                   className={style.selectText}
@@ -498,27 +516,37 @@ class OrderStep1 extends Component {
                 <hr className={style.line}/>
                 <div className={style.options}>
                     <div className={style.oneline}>
-                        <h4>* {options.numSeats.name} (1-10)</h4>
+                        <div className={style.optionTitle}>
+                            <h4>* {options.numSeats.name} (1-10)</h4>
+                        </div>
                         {displayNumberOfSeats(product, category)}
                         {checkErrorDisplay(options.numSeats.id)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>* {options.hubcapsMaterial.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>* {options.hubcapsMaterial.name}</h4>
+                        </div>
                         {displayHubcapsMaterial()}
                         {checkErrorDisplay(options.hubcapsMaterial.id)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>* {options.numExhausts.name}(1-4)</h4>
+                        <div className={style.optionTitle}>
+                            <h4>* {options.numExhausts.name}(1-4)</h4>
+                        </div>
                         {displayNumberOfExhausts()}
                         {checkErrorDisplay(options.numExhausts.id)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>*{options.spareTire.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>*{options.spareTire.name}</h4>
+                        </div>
                         {spareTireSize()}
                         {checkErrorDisplay(options.spareTire.id)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>*{options.engine.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>*{options.engine.name}</h4>
+                        </div>
                         {chooseEngine()}
                         {checkErrorDisplay(options.engine.id)}
                     </div>
@@ -530,27 +558,37 @@ class OrderStep1 extends Component {
                 <hr className={style.line}/>
                 <div className={style.options}>
                     <div className={style.oneline}>
-                        <h4>* {options.color.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>* {options.color.name}</h4>
+                        </div>
                         {displayColor(product, category)}
                         {checkErrorDisplay(options.color.id)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>* {options.interiorFabricColor.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>* {options.interiorFabricColor.name}</h4>
+                        </div>
                         {displayInteriorFabricColor()}
                         {checkErrorDisplay(options.interiorFabricColor.id)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>* {options.dashboardColor.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>* {options.dashboardColor.name}</h4>
+                        </div>
                         {displayDashBoardColor()}
                         {checkErrorDisplay(options.dashboardColor.id)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>* {options.dashboardLightsColor.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>* {options.dashboardLightsColor.name}</h4>
+                        </div>
                         {displayDashboardLightsColor()}
                         {checkErrorDisplay(options.dashboardLightsColor.id)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>*{options.floormatsColor.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>*{options.floormatsColor.name}</h4>
+                        </div>
                         {selectFloormatsColor()}
                         {checkErrorDisplay(options.floormatsColor.id)}
                     </div>
@@ -561,34 +599,47 @@ class OrderStep1 extends Component {
                 <hr className={style.line}/>
                 <div className={style.options}>
                     <div className={style.oneline}>
-                        <h4>{options.hasGPS.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>{options.hasGPS.name}</h4>
+                        </div>
                         {selectGPS()}
                     </div>
 
                     <div className={style.oneline}>
-                        <h4>{options.hasTintedWindows.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>{options.hasTintedWindows.name}</h4>
+                        </div>
                         {selectTintedWindows(product, category)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>{options.hasRadio.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>{options.hasRadio.name}</h4>
+                        </div>
                         {selectRadio(product, category)}
                     </div>
                     <div>
                         {selectedRadio(product, category)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>{options.hasGloveBox.name}</h4>
+                        <div className={style.optionTitle}>
+                          <h4>{options.hasGloveBox.name}</h4>
+                        </div>
                         {selectGolveBox()}
                     </div>
                     <div className={style.oneline}>
-                        <h4>{options.hasCupholders.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>{options.hasCupholders.name}</h4>
+                        </div>
                         {selectCupholders()}
                     </div>
-                    <div>
+                    <div className={style.oneline}>
                         {selectCupholderNum()}
+                        {checkErrorDisplay(options.numCupholders.id)}
                     </div>
                     <div className={style.oneline}>
-                        <h4>{options.hasCigaretteLighters.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>{options.hasCigaretteLighters.name}</h4>
+                        </div>
                         {selectCigarettLighters(product, category)}
                     </div>
                     <div>
@@ -596,7 +647,9 @@ class OrderStep1 extends Component {
                     </div>
 
                     <div className={style.oneline}>
-                        <h4>{options.hasAirConditioning.name}</h4>
+                        <div className={style.optionTitle}>
+                            <h4>{options.hasAirConditioning.name}</h4>
+                        </div>
                         {selectAriConditioning(product, category)}
                     </div>
                 </div>
@@ -606,25 +659,32 @@ class OrderStep1 extends Component {
             <div>Premium options will add an extra $50 to the base price of the vehicle.</div>
             <hr className={style.line}/>
             <div className={style.oneline}>
-              <h4>{options.hasHoodOrnament.name}</h4>
+              <div className={style.optionTitle}>
+                <h4>{options.hasHoodOrnament.name}</h4>
+              </div>
               {selectHoodOra()}
             </div>
             <div>
               {hoodOraType()}
             </div>
             <div className={style.oneline}>
-              <h4>{options.hasTrunkMonkey.name}</h4>
+              <div className={style.optionTitle}>
+                <h4>{options.hasTrunkMonkey.name}</h4>
+              </div>
               {selectTrunkMonkey()}
             </div>
             <div>
               {setTrunkMonekyType()}
             </div>
             <div className={style.oneline}>
-              <h4>{options.hasMonogrammedSteeringWheelCover.name}</h4>
+              <div className={style.optionTitle}>
+                <h4>{options.hasMonogrammedSteeringWheelCover.name}</h4>
+              </div>
               {selectMonogrammedSteeringWheelCover()}
             </div>
-            <div>
+            <div className={style.oneline}>
               {getMonogram()}
+              {checkErrorDisplay(options.monogram.id)}
             </div>
 
           </div>

@@ -1,7 +1,6 @@
 .grid_style {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-gap: 7%;
 }
 img {
     width: 100%;

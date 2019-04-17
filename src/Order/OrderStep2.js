@@ -137,7 +137,7 @@ class OrderStep2 extends Component {
                 <span className={style.highlight}></span>
                 <span className={style.bar}></span>
                 <label className={style.labelTag}>City</label>
-                {checkErrorDisplay('ShipmentStreetAddress')}
+                {checkErrorDisplay('ShipmentCity')}
               </div>
               <div className={style.inputArea}>
                 <input className={style.infoItem} onChange={setUserInfo.bind(null, 'ShipmentState')} value={userInfo.ShipmentState || ''}/>

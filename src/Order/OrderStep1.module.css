@@ -46,15 +46,20 @@
     flex-direction: column;
 }
 .oneline{
-    padding: 0 1% 0 1%;
+    /*padding: 0 1% 0 1%;*/
     display: flex;
     flex-direction: row;
     /*justify-content: space-between;*/
     align-items: center;
 }
-.oneline>h4 {
-    width: 23rem;
-    margin-right: 15%;
+.optionTitle {
+    width: 25rem;
+    min-width: 25rem;
+    margin-right: 4rem;
+}
+.oneOption{
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr;
 }
 .options>h2 {
     text-align: left;
@@ -110,11 +115,13 @@
 }
 .colorInput{
     margin-right: 14rem;
+    min-width: 20rem;
 }
 
 .select, .inputText{
     position: relative;
     width: 20rem;
+    min-width: 20rem;
 }
 .selectText {
     position: relative;
@@ -260,12 +267,22 @@
 }
 .buttonToNext{
     margin-bottom: 1%;
+    margin-top: 1%;
 }
 @media (max-width: 40rem) {
     .title{
         display: none;
     }
     .item{
+        display: flex;
+        flex-direction: column;
+    }
+    .oneline{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navigantions {
         display: flex;
         flex-direction: column;
     }
