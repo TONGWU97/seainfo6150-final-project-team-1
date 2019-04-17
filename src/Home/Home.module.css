@@ -42,8 +42,14 @@
     margin-left: 2%;
 }
 
-@media (min-width: 100px) {
+@media (max-width: 1000px) {
     .MovingCar {
-        min-width: 7rem;
+        max-width: 23rem;
+    }
+}
+
+@media (min-width: 300px) {
+    .MovingCar {
+        min-width: 15rem;
     }
 }
