@@ -19,18 +19,18 @@ class AllProducts extends Component {
         <div className={styles.grid_style}>
           <ProductsForHome categories={categories} products={products} />
         </div>
-        {viewedProducts.length === 0 ? <div></div>
-            : <h2 className={styles.Title}>Viewed Products</h2>}
+        {/*{viewedProducts.length === 0 ? <div></div>*/}
+            {/*: <h2 className={styles.Title}>Viewed Products</h2>}*/}
         </div>
         <br/>
         <div>
           <div>
-        <ViewedProducts className={styles.ViewedProducts}
-          categories={categories}
-          products={
-            viewedProducts.map(productId => allProducts[productId])
-          }
-        />
+        {/*<ViewedProducts className={styles.ViewedProducts}*/}
+          {/*categories={categories}*/}
+          {/*products={*/}
+            {/*viewedProducts.map(productId => allProducts[productId])*/}
+          {/*}*/}
+        {/*/>*/}
           </div>
         </div>
        </div>

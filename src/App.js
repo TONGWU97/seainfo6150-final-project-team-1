@@ -32,6 +32,7 @@ import NotFound from './NotFound/NotFound';
 import Header from './Header';
 import Footer from './Footer';
 import TopButton from './TopButton';
+import ViewedProducts from "./ViewedProducts/ViewedProducts";
 
 
 let App = (props) => (
@@ -55,7 +56,6 @@ let App = (props) => (
 
         {/*}*/}
         {/* end error display */}
-
         
         <Switch>
           <Route
@@ -138,6 +138,15 @@ let App = (props) => (
         </Switch>
       </main>
       <TopButton />
+
+        {props.viewedProducts.length === 0 ? <div></div>
+            : <h2 className={styles.Title}>Viewed Products</h2>}
+        <ViewedProducts
+            categories={props.categories}
+            products={
+                props.viewedProducts.map(productId => props.products[productId])
+            }
+        />
       
       <Footer/>
     </div>
