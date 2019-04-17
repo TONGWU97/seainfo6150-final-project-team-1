@@ -6,12 +6,12 @@ const DisplayOptions = (optionValue) => {
     const option = optionValue.option;
     const value = optionValue.value;
     let colorNum = '#000';
-    if (option === 'Color' || option === 'Dashboard Lights Color' || option === 'floormatsColor') {
+    if (option === 'Color' || option === 'Dashboard Lights Color') {
         return displayColor(value, value)
     }
-    if (option === 'Interior Fabric Color' || option === 'Dashboard Color') {
+    if (option === 'Interior Fabric Color' || option === 'Dashboard Color' || option === 'floormatsColor') {
         if (value === 'red') {
-            colorNum = '#f00'
+            colorNum = '#ff0000'
         } else if (value === 'tan') {
             colorNum = '#d2b48c'
         } else if (value === 'gray') {
@@ -29,7 +29,7 @@ const DisplayOptions = (optionValue) => {
         return (
             <div className={style.oneline}>
                 <img src={options.hoodOrnament.values[value].img} alt={options.hoodOrnament.values[value].id}/>
-                <label>{value}</label>
+                <label className={style.valueDisplay}>{value}</label>
             </div>
         )
     }
@@ -37,22 +37,22 @@ const DisplayOptions = (optionValue) => {
         return (
             <div className={style.oneline}>
                 <img src={options.trunkMonkey.values[value].img.sm} alt={options.trunkMonkey.values[value].id}/>
-                <label>{value}</label>
+                <label className={style.valueDisplay}>{value}</label>
             </div>
         )
     }
     if (value === 'true' || value === true) {
         return (
-            <label>Yes</label>
+            <label className={style.valueDisplay}>Yes</label>
         )
     }
     if (value === 'false' || value === false) {
         return (
-            <label>No</label>
+            <label className={style.valueDisplay}>No</label>
         )
     }
     return (
-        <label>{value}</label>
+        <label className={style.valueDisplay}>{value}</label>
     )
 
 };
@@ -60,7 +60,7 @@ const displayColor = (colorNum, value) => {
     return (
         <div className={style.oneline}>
             <input className={style.colorDisplay} type='color' value={colorNum} disabled/>
-            <label>{value}</label>
+            <label className={style.valueDisplay}>{value}</label>
         </div>
     )
 };

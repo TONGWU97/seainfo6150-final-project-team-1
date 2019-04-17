@@ -61,9 +61,11 @@
     width: 12rem;
     font-weight: bold;
     margin-right: 1%;
+    color: #000000;
 }
 .userTitleLong {
     width: 18rem;
+    color: #000000;
 }
 .valueInfo{
     margin-left: 13rem;
@@ -87,6 +89,9 @@
     border-top: 1px solid #8c8b8b;
     width: 100%;
 }
+.valueDisplay{
+    color: #666666;
+}
 @media (max-width: 40rem) {
   .displayCarInforAndOptions{
     display: flex;
@@ -95,6 +100,21 @@
   .selectedOption{
     width: 90%;
   }
+}
+@media (max-width: 20rem) {
+    .displayCarInforAndOptions{
+        display: flex;
+        flex-direction: column;
+    }
+    .selectedOption{
+        width: 100%;
+    }
+    .oneline, .onelineUserInfo{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
 }
 
 @media print {

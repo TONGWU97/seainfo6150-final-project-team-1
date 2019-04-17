@@ -53,7 +53,7 @@ class Summary extends Component {
       }
 
       return(
-        <div>
+        <div className={style.valueDisplay}>
           <div className={style.onelineUserInfo}>
             <div className={style.userTitle}>Name</div>
             <div>{userInfo.buyerName}</div>

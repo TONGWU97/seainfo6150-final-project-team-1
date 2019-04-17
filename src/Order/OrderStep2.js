@@ -98,7 +98,7 @@ class OrderStep2 extends Component {
               const originalOption = options[option];
               const selectedValue = selectedOptions[option];
               return (
-                <div key={index} className={style.oneline}>
+                <div key={index} className={style.onelineCar}>
                   <h4 className={style.optionTitle}>{originalOption.name}</h4>
                   <DisplayOptions option={originalOption.name} value={selectedValue}/>
                 </div>
@@ -155,7 +155,7 @@ class OrderStep2 extends Component {
               </div>
             </div>
           </div>
-          <div className={style.oneline}>
+          <div className={style.checkboxOption}>
             <input type="checkbox" onChange={this.handleCheckBox.bind(this)} checked={this.state.checked}/>
             <label>Same with shipment address</label>
           </div>

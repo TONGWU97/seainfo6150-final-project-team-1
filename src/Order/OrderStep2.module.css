@@ -41,7 +41,7 @@
     flex-direction: column;
 
 }
-.oneline{
+.oneline, onelineCar{
     display: flex;
     flex-direction: row;
 }
@@ -134,19 +134,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
-.oneline{
+.oneline, .checkboxOption, .onelineCar{
     display: flex;
     flex-direction: row;
     align-items: center;
     padding-right: 2%;
 }
-.oneline>h4 {
+.oneline>h4, .onelineCar>h4 {
     padding-right: 4%;
 }
 .colorDisplay {
     margin-right: 4%;
 }
-.oneline>img{
+.oneline>img, .onelineCar>img{
     width: 8rem;
 }
 .optionTitle{
@@ -162,6 +162,17 @@
 .buttonToNext{
     margin-bottom: 1%;
 }
+.valueDisplay{
+    color: #666666;
+}
+
+@media (max-width: 25rem) {
+    .onelineCar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
 
 @media (max-width: 40rem) {
     .title{
@@ -174,15 +185,13 @@
     .allOptions{
         grid-template-columns: 1fr;
     }
-    .oneline{
-        display: flex;
-        flex-direction: column;
-    }
+
 }
-@media (max-width: 65rem) {
+@media (max-width: 55rem) {
 
     .oneline{
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
     }
 }
