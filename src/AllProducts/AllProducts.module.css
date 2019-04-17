@@ -3,6 +3,9 @@
     grid-template-columns: 25% 25% 25% 25%;
     grid-column-gap: 5%;
     margin-left: 5%;
+    word-wrap:break-word; 
+    word-break:break-all; 
+
 }
 img {
     width: 100%;
@@ -34,3 +37,14 @@ img {
         grid-template-columns: 25% 25% 25% 25% ;
     }
 }
+
+.grid_style {
+    grid-template-columns: repeat(auto-fit, minmax(4, 1fr));
+}
+
+.ViewedProducts {
+    display: block;
+    justify-self: left;
+    align-self: left;
+}
+

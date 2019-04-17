@@ -14,16 +14,22 @@ class AllProducts extends Component {
     } = this.props;
 
     return (
+      <div>
       <div className={styles.grid_style}>
         <ProductsForHome categories={categories} products={products} />
         {viewedProducts.length === 0 ? <div></div>: <h2 className={styles.Title}>Viewed Products</h2>}
-        <ViewedProducts
+        </div>
+        <br/>
+        <div>
+        <ViewedProducts className={styles.ViewedProducts}
           categories={categories}
           products={
             viewedProducts.map(productId => allProducts[productId])
           }
         />
-      </div>
+        </div>
+       </div>
+      
     )
   }
 }
