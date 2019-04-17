@@ -10,8 +10,13 @@ class Home extends Component {
       viewedProducts,
     } = this.props;
     return (
+   
+      
       <div>
         <h1 className={styles.Title}>Home</h1>
+        <div className={styles.MoveCar}>
+          <img src="https://cdn.dribbble.com/users/2128392/screenshots/4316520/highway-5-take-3.gif" alt="Moving Car" />
+        </div>
         <link href="./Home.module.css" rel="stylesheet" type="text/css" />
         <div className={styles.WelcomePage}>
           <img id={styles.HomeImage} src="https://images.unsplash.com/photo-1551952237-954a0e68786c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="Welcome" />
@@ -26,6 +31,7 @@ class Home extends Component {
             viewedProducts.map(productId => products[productId])
           }
         /> 
+       
         </div>
       )
   }
