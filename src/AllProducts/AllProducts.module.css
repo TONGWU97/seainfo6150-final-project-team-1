@@ -1,6 +1,8 @@
 .grid_style {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
+    grid-column-gap: 5%;
+    margin-left: 5%;
 }
 img {
     width: 100%;
@@ -13,13 +15,13 @@ img {
     }
 }
 
-@media (min-width: 600px) {
+@media (min-width: 650px) {
     .grid_style {
         display: inline-grid;
         grid-template-columns: 50% 50%;
     }
 }
-@media (min-width: 1000px) {
+@media (min-width: 1050px) {
     .grid_style {
         display: inline-grid;
         grid-template-columns: 33% 33% 33%;
