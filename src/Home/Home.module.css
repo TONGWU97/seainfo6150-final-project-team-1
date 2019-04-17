@@ -41,3 +41,9 @@
 .ViewedProducts {
     margin-left: 2%;
 }
+
+@media (min-width: 100px) {
+    .MovingCar {
+        min-width: 7rem;
+    }
+}
