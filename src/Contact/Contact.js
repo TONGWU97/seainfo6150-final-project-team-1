@@ -27,29 +27,35 @@ const Contact = () => (
           </tbody>
         </table>
       </div>
+
+
+
       <div className={style.contact_messagebox}>
         <h2>Leave your message, we will contact you as soon as possible.</h2>
         <form name="Contact_Form">
           <br/>
           Name
           <br/>
-          <input type="text" name="Name" value="Your FullName"></input>
+          <input type="text" name="Name" defaultValue="Your FullName"></input>
           <br/>
           Email Address
           <br/>
-          <input type="text" name="email" value="Email Address"></input>
+          <input type="text" name="email" defaultValue="Email Address"></input>
           <br/>
           Subject
           <br/>
-          <input type="text" name="subject" value="Subject"></input>
+          <input type="text" name="subject" defaultValue="Subject"></input>
           <br/>
           Message
           <br/>
-          <textarea>Leave your message.</textarea>
+          <textarea defaultValue="Leave your message."></textarea>
           <br/>
           <div className={style.submitbutton}><button type="submit" name="submit" value="Submit">Submit</button></div>
         </form>
       </div>
+
+
+
     </div>
   </div>
 )
