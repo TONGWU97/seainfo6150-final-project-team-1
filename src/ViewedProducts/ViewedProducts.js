@@ -17,7 +17,7 @@ const ViewedProducts = ({ categories, products }) => {
         <Link className={styles.ViewedImage} to={`/products/${category.id}/${product.id}`}>
           <img src={category.img.sm} alt={category.id}/>
           <div className={styles.HiddenText}> 
-            <ul>
+            <ul className={styles.displayUl}>
             <li className={styles.price}>Price:{product.price} </li>
             <li className={styles.description}>{product.description} </li>
             </ul>
