@@ -1,14 +1,8 @@
 import styles from'./Home.module.css';
-import ViewedProducts from '../ViewedProducts/ViewedProducts';
 import React, {Component} from 'react';
 
 class Home extends Component {
   render() {
-    const {
-      categories,
-      products,
-      viewedProducts,
-    } = this.props;
     return (
    
       

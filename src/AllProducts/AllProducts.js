@@ -2,15 +2,12 @@ import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 import ProductsForHome from './ProductsForHome';
 import styles from './AllProducts.module.css';
-import ViewedProducts from '../ViewedProducts/ViewedProducts.js';
 
 class AllProducts extends Component {
   render() {
     const {
       categories,
       products,
-      viewedProducts,
-      allProducts
     } = this.props;
 
     return (
