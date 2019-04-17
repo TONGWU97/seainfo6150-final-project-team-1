@@ -1,8 +1,8 @@
 .grid_style {
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
-    grid-column-gap: 5%;
-    margin-left: 5%;
+    grid-column-gap: 2%;
+    margin-left: 2%;
     word-wrap:break-word; 
     word-break:break-all; 
 
