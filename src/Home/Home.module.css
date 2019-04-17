@@ -5,12 +5,13 @@
     margin-bottom: 0px;
    
 }
-.Title{
-    margin-left: 5%;
+.Home{
+   
+    display: inline-block;
+    margin: 0;
+    margin-left: 2%;
 }
-.Title:hover {
 
-}
 .WelcomePage {
     position: relative;
     display: inline;
@@ -22,10 +23,21 @@
     position: absolute;
     bottom: 360px;
     left: 250px;
+    margin-top: 0;
 }
-.MoveCar {
-   
-    margin-bottom: 50px;
-    height: 10%;
-    width: 100%;
+.MovingCar {
+    display: inline-block;
+    height: 10rem;
+    width: 30%;
+    padding-left: 1rem;
+    margin: 0;
+    
+}
+.Title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.ViewedProducts {
+    margin-left: 2%;
 }
