@@ -1,11 +1,29 @@
-.notfound_text{
-  padding: 10%;
-  position: relative;
-}
+@media(min-width:300px){
+  .notfound_text{
+    padding: 10%;
+    position: relative;
+  }
 
-.notfound_img{
-  padding-left: 40%;
-  padding-top: 5%;
-  position: absolute;
-  width: 30%;
-}
+  .notfound_img{
+    padding-left: 45%;
+    padding-top: 12%;
+    position: absolute;
+    width: 30%;
+  }
+  }
+
+
+
+@media(min-width:900px){
+  .notfound_text{
+    padding: 10%;
+    position: relative;
+  }
+
+  .notfound_img{
+    padding-left: 40%;
+    padding-top: 5%;
+    position: absolute;
+    width: 30%;
+  }
+  }
