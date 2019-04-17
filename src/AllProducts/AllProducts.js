@@ -15,18 +15,23 @@ class AllProducts extends Component {
 
     return (
       <div>
-      <div className={styles.grid_style}>
-        <ProductsForHome categories={categories} products={products} />
-        {viewedProducts.length === 0 ? <div></div>: <h2 className={styles.Title}>Viewed Products</h2>}
+      <div className={styles.productsDisplay}>
+        <div className={styles.grid_style}>
+          <ProductsForHome categories={categories} products={products} />
+        </div>
+        {viewedProducts.length === 0 ? <div></div>
+            : <h2 className={styles.Title}>Viewed Products</h2>}
         </div>
         <br/>
         <div>
+          <div>
         <ViewedProducts className={styles.ViewedProducts}
           categories={categories}
           products={
             viewedProducts.map(productId => allProducts[productId])
           }
         />
+          </div>
         </div>
        </div>
       

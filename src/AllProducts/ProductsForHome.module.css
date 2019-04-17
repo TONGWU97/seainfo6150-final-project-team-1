@@ -4,8 +4,8 @@
     list-style-type: none;
     text-decoration: none;
     position: relative;
-    margin-left: 10%;
-    text-align: center;
+    text-align: left;
+    color: #333333;
 }
 .list :hover {
     text-decoration: underline;
@@ -56,7 +56,11 @@
 .unavailableText li {
     list-style-type: none;
 }
-
+.singleProduct {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
 
 .productsImageUnavailable {
     opacity: 0.6;
@@ -64,7 +68,7 @@
 
 .unavailableText {
     opacity: 0.5;
-    text-align: center;
+    text-align: left;
 }
 .unavailable {
     list-style-type: none;
