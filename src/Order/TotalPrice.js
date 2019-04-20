@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import style from './TotalPrice.module.css'
 
 const TotalPrice = ({ options, selectedOptions, product }) => {
   if (!product) {
@@ -16,13 +17,13 @@ const TotalPrice = ({ options, selectedOptions, product }) => {
     [...premiumOptionsIds].filter(x => selectedOptionsIds.has(x)))
 
   return (
-    <div>
+    <div className={style.totalPrice}>
       {
         [...selectedPremiumOptionsIds].map(id =>
-          <div><span>{options[id].name}</span> add 50</div>
+          <div key={id} className={style.premiumOptions}><span>{options[id].name}</span> add 50</div>
         )
       }
-      <div><span>Total:</span> { price + [...selectedPremiumOptionsIds].length*50 }</div>
+      <div className={style.total}><span>Total:</span> { price + [...selectedPremiumOptionsIds].length*50 }</div>
     </div>
   );
 };

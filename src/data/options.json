@@ -44,8 +44,10 @@
   "numExhausts": {
     "id": "numExhausts",
     "name": "Number of Exhausts",
-    "maximumNum": 4,
-    "minimumNum": 1
+    "requirements": {
+      "maximumNum": 4,
+      "minimumNum": 1
+    }
   },
   "hasTintedWindows": {
     "id": "hasTintedWindows",

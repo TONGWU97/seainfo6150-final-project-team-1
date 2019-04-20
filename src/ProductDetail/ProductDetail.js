@@ -11,13 +11,13 @@ class ProductDetail extends PureComponent {
     const {
       categories,
       product,
-      selectProductId
+      selectProductId,
     } = this.props;
 
     const category = categories[product.categoryId];
     return (
       <div className={styles.ProductDetail}>
-        <h1>>> {product.title}</h1>
+        {/* <h1>>> {product.title}</h1> */}
         <div className={styles.detailbox}>
           <div className={styles.detailList}>
             <ul>
@@ -27,12 +27,12 @@ class ProductDetail extends PureComponent {
               {product.sale == null ? null : <li><span>{product.sale}</span><p>sale price</p></li>}
             </ul>
             <div className={styles.description}>{product.description}</div>
-          </div>
-          <div className={styles.detailImage}><img src={category.img.lg} /></div>
-        </div>
-          {/* start order button */}
-          <Link className={styles.button} to="/order/1" onClick={selectProductId.bind(null, product.id)}><button>Add to Cart ▶</button></Link>
+            {/* start order button */}
+          <div className={styles.addCartButton}><Link to="/order/1" onClick={selectProductId.bind(null, product.id)}><button><img src="https://img.icons8.com/dotty/80/000000/garage.png" alt=""/><div>Add to Cart ▶</div></button></Link></div>
           {/* end order button */}
+          </div>
+          <div className={styles.detailImage}><img src={category.img.lg} alt={category.id}/></div>
+        </div>
       </div>
     );
   }

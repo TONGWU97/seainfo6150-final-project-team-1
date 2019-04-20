@@ -1,16 +1,17 @@
 #HomeImage {
-    margin-left: 10%;
-    margin-right: 10%;
     align: center;
     height: 500px;
-    width: 80%;
+    width: 100%;
+    margin-bottom: 0px;
+   
 }
-.Title{
-    margin-left: 5%;
+.Home{
+   
+    display: inline-block;
+    margin: 0;
+    margin-left: 2%;
 }
-.Title:hover {
 
-}
 .WelcomePage {
     position: relative;
     display: inline;
@@ -22,4 +23,33 @@
     position: absolute;
     bottom: 360px;
     left: 250px;
+    margin-top: 0;
+}
+.MovingCar {
+    display: inline-block;
+    height: 10rem;
+    width: 30%;
+    padding-left: 1rem;
+    margin: 0;
+    
+}
+.Title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.ViewedProducts {
+    margin-left: 2%;
+}
+
+@media (max-width: 1000px) {
+    .MovingCar {
+        max-width: 23rem;
+    }
+}
+
+@media (min-width: 300px) {
+    .MovingCar {
+        min-width: 15rem;
+    }
 }

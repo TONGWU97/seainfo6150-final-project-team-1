@@ -5,6 +5,9 @@
 :global(body) {
   font-size: 1.6em;
 }
+.Title{
+  margin-left: 5%;
+}
 
 .container {
   

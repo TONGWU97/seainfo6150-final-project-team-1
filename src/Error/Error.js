@@ -1,7 +1,8 @@
 import React from 'react';
+import style from './Error.module.css'
 
 const Error = ({ error }) => (
-  <div>{error}</div>
+  <div className={style.errorDisplay}>{error}</div>
 );
 
 export default Error;

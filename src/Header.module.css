@@ -1,13 +1,19 @@
 .header{
     background-image: url('/assets/img/background/banner.jpg');
     background-size: 100% 100%;
-    height: 28rem;
+    height: 36rem;
+    min-width: 30rem;
+}
+
+.headerNavigate{
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     padding-bottom: 0.8rem;
     font-size: 2.8rem;
+    height: 34rem;
 }
+
 .item{
     margin-left: 3%;
     padding: 0.5%;
@@ -16,4 +22,38 @@
 }
 .item:hover{
     text-decoration: underline;
+}
+
+.dealerName{
+    position: absolute;
+    color: #fff;
+    padding: 3% 0 5% 3%;
+    font-size: 5rem;
+}
+
+@media (max-width: 40rem) {
+    .header{
+        min-width: 30rem;
+        flex-wrap: wrap-reverse;
+        font-size: 2rem;
+        background-size: 100% 100%;
+    }
+    .headerNavigate{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+}
+@media (max-width: 25rem){
+    .headerNavigate{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+}
+@media print {
+     .header{
+        display: none;
+    }
 }
